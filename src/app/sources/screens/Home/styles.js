@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         position: 'absolute',
-        bottom: 12
+        bottom: 152
     },
     btn_m: {
         width: 356,
@@ -30,6 +30,32 @@ const styles = StyleSheet.create({
         textAlign: "center",
         letterSpacing: 0.4,
         color: "#FFFFFF"
+    },
+    circle: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        height: 227,
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    btn_s: {
+        position: 'absolute',
+        bottom: 50
+    },
+    sub_text: {
+        fontFamily: 'Quicksand',
+        color: '#9DA9DF',
+        fontSize: 15,
+        bottom: 14
+    },
+    overlay: {
+        position: 'absolute',
+        opacity: 0.1,
+        backgroundColor: '#F3EED9',
+        width: '100%',
+        height: '100%'
     }
 });
 
