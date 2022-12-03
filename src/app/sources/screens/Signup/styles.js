@@ -41,12 +41,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 50
     },
-    sub_text: {
-        fontFamily: 'Quicksand',
-        color: 'black',
-        fontSize: 15,
-        marginBottom: 15
-    },
     overlay: {
         position: 'absolute',
         opacity: 0.82,
@@ -64,6 +58,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         fontFamily: 'Quicksand',
         backgroundColor: 'white'
+    },
+    logo: {
+        marginBottom: 20
     }
 });
 

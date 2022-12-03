@@ -4,31 +4,37 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import styles from "./styles";
 
-const Login = ({ navigation }) => {
+const Signup = ({ navigation }) => {
     const [ username, changeUsername ] = useState("Email");
     const [ password, changePassword ] = useState("Password");
+    const [ cfpassword, changeCfPassword ] = useState("Confirm Password");
     return (
         <View style={styles.container}>
             <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
                 <View style={styles.overlay}></View>
-                <Image source={require('../../../assets/images/logo-r.png')}  alt='logo' />
+                <Image source={require('../../../assets/images/logo-r.png')}  alt='logo' style={styles.logo} />
                 <View style={styles.circle}>  
                     <TextInput 
                         inlineImageLeft='mail'
                         inlineImagePadding={30}
                         value={username}
                         onChangeText={changeUsername}
-                        style={styles.text_input} /> 
+                        style={styles.text_input} />
                     <TextInput 
                         inlineImageLeft='lock'
                         inlineImagePadding={30}
                         value={password}
                         onChangeText={changePassword}
                         style={styles.text_input} /> 
-                    <Text style={styles.sub_text}>Forgot password?</Text>
+                    <TextInput 
+                        inlineImageLeft='lock'
+                        inlineImagePadding={30}
+                        value={cfpassword}
+                        onChangeText={changeCfPassword}
+                        style={styles.text_input} />
                     <Pressable style={styles.btn}>
                         <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#EB0327', '#EB0349']} style={styles.btn_m}>
-                            <Text style={styles.btn_text}>SIGN IN</Text>
+                            <Text style={styles.btn_text}>SIGN UP</Text>
                         </LinearGradient>
                     </Pressable>
                 </View>
@@ -37,4 +43,4 @@ const Login = ({ navigation }) => {
     )
 }
 
-export default Login;
+export default Signup;
