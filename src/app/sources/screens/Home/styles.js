@@ -46,8 +46,9 @@ const styles = StyleSheet.create({
     },
     sub_text: {
         fontFamily: 'Quicksand',
-        color: '#9DA9DF',
+        color: '#000000',
         fontSize: 15,
+        fontWeight: "bold",
         bottom: 14
     },
     overlay: {

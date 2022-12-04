@@ -12,12 +12,12 @@ function Home({ navigation }) {
                 <View style={styles.overlay}></View>
                 <ImageBackground source={require('../../../assets/images/intro_img.png')} resizeMode="cover" style={styles.circle}>   
                     <Pressable style={styles.btn} onPress={() => navigation.navigate("Login")}>
-                        <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#EB0327', '#EB0349']} style={styles.btn_m}>
+                        <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#BB2649', '#BB2649']} style={styles.btn_m}>
                             <Text style={styles.btn_text}>SIGN IN</Text>
                         </LinearGradient>
                     </Pressable>
 
-                    <Text style={styles.sub_text}>If you are new to us</Text>
+                    <Text style={styles.sub_text}>If you are new to use</Text>
 
                     <Pressable style={styles.btn_s} onPress={() => navigation.navigate("Signup")}>
                         <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#9DA9DF', '#9DA9DF']} style={styles.btn_m}>
