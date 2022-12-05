@@ -4,7 +4,8 @@ const exercisesSchema = new mongoose.Schema({
     id: {
         type: Number,
         min: 0,
-        required: true
+        required: true,
+        unique: true
     },
     name:{
         type: String,
@@ -17,11 +18,11 @@ const exercisesSchema = new mongoose.Schema({
         type: String
     },
     group_id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Number,
         ref: "Group"
     },
     series_id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Number,
         ref: "Series"
     },
     duration:{
@@ -34,7 +35,8 @@ const seriesSchema = new mongoose.Schema({
     series_id: {
         type: Number,
         min: 0,
-        required: true
+        required: true,
+        unique: true
     },
     name:{
         type: String,
@@ -44,7 +46,7 @@ const seriesSchema = new mongoose.Schema({
         type: String
     },
     exercises: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Number,
         ref: "Exercises"
     }]
 });
@@ -65,7 +67,7 @@ const cmtAndRateSchema = new mongoose.Schema({
         required: true
     },
     excersise_id:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Number,
         ref: "Exercises",
         required: true
     }
