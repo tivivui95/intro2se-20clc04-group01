@@ -1,4 +1,4 @@
-const { Exercises, Series, CmtAndRate} = require('../model/model');
+const { Exercises, Series, MuscleGroup, CmtAndRate} = require('../model/model');
 
 const seriesController = {
     addSeries: async (req, res) =>{
@@ -17,6 +17,14 @@ const seriesController = {
             res.status(200).json(series);
         } catch (err) {
             res.status(500).json(err);
+        }
+    },
+    getASeries: async (req, res) =>{
+        try {
+            const series = await Series.findOne({series_id: req.params.id}).populate("exercises", "id name video descrip duration");
+            res.status(200).json(series);
+        } catch (error) {
+            res.status(500).json(error)
         }
     }
 };

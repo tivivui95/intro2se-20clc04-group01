@@ -5,14 +5,16 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv/config');
 const exercisesRoute = require('./routes/exercises');
-const SeriesRoute = require('./routes/series')
+const seriesRoute = require('./routes/series');
+const muscleGroupRoute = require('./routes/group');
 
 app.use(bodyParser.json({limit:"50mb"}));
 app.use(cors());
 
 //Route
 app.use("/ex", exercisesRoute);
-app.use('/series', SeriesRoute)
+app.use('/series', seriesRoute);
+app.use('/mg', muscleGroupRoute)
 
 //connect DB
 mongoose.connect(process.env.DB_CONNECTION, () =>{
