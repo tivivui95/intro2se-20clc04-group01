@@ -24,7 +24,20 @@ const seriesController = {
             const series = await Series.findOne({series_id: req.params.id}).populate("exercises", "id name video descrip duration");
             res.status(200).json(series);
         } catch (error) {
-            res.status(500).json(error)
+            res.status(500).json(error.message)
+        }
+    },
+    deleteASeries: async (req, res) =>{
+        try {
+            const deletedSeries = await Series.findOneAndDelete({series_id: req.params.id})
+            if (!deletedSeries)
+                res.send("This series id does not exists.");
+            else {
+                await Exercises.updateMany({series: deletedSeries._id}, {$set: {series: null}});
+                res.send("Delete successfully!");
+            }
+        } catch (err) {
+            res.status(500).json({ success: false, msg: err.message });
         }
     }
 };

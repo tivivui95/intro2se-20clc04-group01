@@ -57,11 +57,11 @@ const exercisesSchema = new mongoose.Schema({
     descrip: {
         type: String
     },
-    group_id: {
+    group: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Group"
     },
-    series_id: {
+    series: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Series"
     },

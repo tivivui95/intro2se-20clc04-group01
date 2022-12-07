@@ -23,7 +23,20 @@ const muscleGroupController = {
             const group = await MuscleGroup.findOne({group_id: req.params.id}).populate("exercises", "id name video descrip duration");
             res.status(200).json(group);
         } catch (error) {
-            res.status(500).json(error)
+            res.status(500).json(error.message)
+        }
+    },
+    deleteAGroup: async (req, res) =>{
+        try {
+            const deletedGroup = await MuscleGroup.findOneAndDelete({group_id: req.params.id})
+            if (!deletedGroup)
+                res.send("This group id does not exists.");
+            else {
+                await Exercises.updateMany({group: deletedGroup._id}, {$set: {group: null}});
+                res.send("Delete successfully!");
+            }
+        } catch (err) {
+            res.status(500).json({ success: false, msg: err.message });
         }
     }
 }

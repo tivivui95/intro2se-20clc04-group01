@@ -9,4 +9,8 @@ router.get('/', exercisesController.getAllExercises);
 
 router.get('/:id', exercisesController.getAnExercises);
 
+router.put('/update/:id', exercisesController.updateExercises);
+
+router.delete('/del/:id', exercisesController.deleteAnExercises);
+
 module.exports = router;
