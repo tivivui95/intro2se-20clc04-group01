@@ -36,7 +36,7 @@ const exercisesController = {
     getAllExercises: async (req, res) =>{
         try {
             const exercises = await Exercises.find();
-            res.status(200).json(exercises);
+            res.status(200).json({"ex": exercises});
         } catch (err) {
             res.status(500).json(err);
         }
