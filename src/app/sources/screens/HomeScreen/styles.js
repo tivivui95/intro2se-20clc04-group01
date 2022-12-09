@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     exercise_wrapper: {
 
-    }
+    },
 });
 
 export default styles;
