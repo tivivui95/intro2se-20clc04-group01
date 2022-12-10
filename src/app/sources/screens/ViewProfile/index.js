@@ -10,7 +10,7 @@ const ViewProfile = ({ navigation }) => {
     const [isLoading, setLoading] = useState(true);
     const getAPI = async () => {
         try {
-        const response = await fetch('https://ee23-171-226-38-247.ap.ngrok.io/ex/1');
+        const response = await fetch('https://d200-171-226-38-247.ap.ngrok.io/ex/1');
         const my_data = await response.json();
         console.log(my_data);
         changeData(my_data);
