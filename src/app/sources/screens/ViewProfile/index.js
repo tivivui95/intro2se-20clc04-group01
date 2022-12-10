@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, ImageBackground, View, Text, Image, Pressable, TextInput, FlatList, ListViewComponent } from "react-native";
+import { ActivityIndicator, ImageBackground, View, Text, Image, Pressable, TextInput, FlatList, ListViewComponent,TouchableOpacity} from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import styles from "./styles";
 
-const HomeScreen = ({ navigation }) => {
+const ViewProfile = ({ navigation }) => {
     const [ data, changeData ] = useState("");
     const [isLoading, setLoading] = useState(true);
     const getAPI = async () => {
@@ -27,39 +27,47 @@ const HomeScreen = ({ navigation }) => {
     // <SafeAreaView style={styles.container}>
         <View style={styles.container}>
             <Text style={styles.userName}>Duong Minh Tung</Text>
-            <Text style={styles.nickname}>Toshiro</Text> 
+            <Text style={styles.nickname}>Toshiro</Text>
+
             <Image 
                 style={styles.ava_picture}
                 source={require('../../../assets/images/profile.png')}
             />
 
-            <TextInput  style={styles.search_wrapper} 
-                        placeholder={'Search exercise...'}/>
-
-            <View style={styles.exercise_wrapper}>
-                <ImageBackground style={styles.picture} source={require('../../../assets/images/pushup.png')} resizeMode='cover'>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Exercise ID:  
-                        <Text style={styles.exercise_text}>  {data.id}</Text>
-                    </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Name:  
+            <View style={styles.name_wrapper}>
+                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                        Email:  
                         <Text style={styles.exercise_text}>  {data.name}</Text>
                     </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Description:  
-                        <Text style={styles.exercise_text}>  {data.descrip}</Text>
-                    </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Duration:  
-                        <Text style={styles.exercise_text}>  {data.duration}</Text>
-                    </Text>
-                </ImageBackground>
             </View>
 
+            <View style={styles.gender_wrapper}>
+                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                        Gender:  
+                        <Text style={styles.exercise_text}>  {data.descrip}</Text>
+                    </Text>
+            </View>
+
+            <View style={styles.height_wrapper}>
+                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                        Height:  
+                        <Text style={styles.exercise_text}>  {data.id}</Text>
+                    </Text>
+            </View>
+
+            <View style={styles.weight_wrapper}>
+                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                        Weight:  
+                        <Text style={styles.exercise_text}>  {data.duration}</Text>
+                    </Text>
+            </View>
+
+            <TouchableOpacity style={styles.button}>
+                    <Text style={styles.signout}> Sign Out</Text>
+            </TouchableOpacity> 
         </View>
         
         );
 };
 
-export default HomeScreen;
+export default ViewProfile;
