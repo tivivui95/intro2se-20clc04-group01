@@ -8,33 +8,34 @@ const styles = StyleSheet.create({
         height: 852,
         flex: 1
     },
-    sayHello: {
+    userName: 
+    {
         position: 'relative',
-        fontSize: 20,
-        top: 46,
-        marginLeft: 32
+        fontSize: 22,
+        top: 130,
+        font: 'Poppins',
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
-    name: {
+
+    nickname: {
         position: 'relative',
-        fontSize: 20,
-        color: '#BB2649',
+        fontSize: 15,
+        top: 130,
+        font: 'Roboto',
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
-    title: {
-        position: 'relative',
-        color: '#BB2649',
-        fontSize: 25,
-        fontWeight: "bold",
-        paddingLeft: 32,
-    },
+
     ava_picture:
     {
         position: 'relative',
-        resizeMode: 'contain',
-        top: 25,
-        left: 334
+        resizeMode: 'stretch',
+        marginTop: 20,
+        marginLeft: 190,
+
     },
-    plan_picture:
-    {
+    plan_picture: {
         position: 'relative',
         borderRadius: 10,
         marginHorizontal: 25
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: 300,
         height: 50,
-        marginTop: 10,
+        marginTop: 300,
         marginLeft: 30,
         paddingHorizontal: 20,
         backgroundColor: '#FFFFFF',
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     },
     exercise_text: {
         fontSize: 15,
-        color: '#FFFFFF',
+        color: 'white',
         marginLeft: 32
     },
     exercise_wrapper: {

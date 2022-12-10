@@ -26,35 +26,16 @@ const HomeScreen = ({ navigation }) => {
     return (
     // <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-            <Text style={styles.sayHello}>Hello
-            <Text style={styles.name}> Toshiro</Text>
-            </Text> 
+            <Text style={styles.userName}>Duong Minh Tung</Text>
+            <Text style={styles.nickname}>Toshiro</Text> 
             <Image 
                 style={styles.ava_picture}
                 source={require('../../../assets/images/profile.png')}
             />
-            <Text style={styles.title}>Let's start your day</Text>
+
             <TextInput  style={styles.search_wrapper} 
                         placeholder={'Search exercise...'}/>
-            {/* <View>
-                <Image 
-                style={styles.picture}
-                source={require('../../../assets/images/squat.png')}
-                />
-                <Image 
-                style={styles.picture}
-                source={require('../../../assets/images/pushup.png')}
-                />
-            </View>
 
-            <View>
-                <Text style={styles.title_exercise}>Category</Text> 
-            </View>
-
-            <View>
-                <Text style={styles.title_exercise}>In-progress</Text>
-            </View>  */}
-            <Text style={{ fontSize: 20, marginLeft: 32, fontWeight: 'bold',color: '#000000', marginBottom: 50}}>Today's Workout Plan</Text>
             <View style={styles.exercise_wrapper}>
                 <ImageBackground style={styles.picture} source={require('../../../assets/images/pushup.png')} resizeMode='cover'>
                     <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
