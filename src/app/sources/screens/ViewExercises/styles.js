@@ -35,6 +35,34 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins',
         fontSize: 14,
         color: 'black'
+    },
+    btn: {
+        position: 'relative'
+    },
+    btn_m: {
+        width: 356,
+        borderRadius: 6,
+        height: 55,
+        justifyContent: 'center'
+    },
+    btn_text: {
+        alignSelf: 'center',
+        fontFamily: 'Poppins',
+        fontFamily: "Poppins",
+        fontStyle: "normal",
+        fontWeight: "700",
+        fontSize: 20,
+        lineHeight: 30,
+        textAlign: "center",
+        letterSpacing: 0.4,
+        color: "#FFFFFF"
+    },
+    title2: {
+        fontFamily: 'Poppins',
+        color: '#2694BB',
+        marginTop: 12,
+        fontWeight: '800',
+        fontSize: 16
     }
 });
 

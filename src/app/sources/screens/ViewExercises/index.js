@@ -14,7 +14,7 @@ const ViewExercises = ({ navigation }) => {
 
     const getAPI = async () => {
         try {
-         const response = await fetch(Connections.serverURL + 'series/1');
+         const response = await fetch(Connections.serverURL + '/series/1');
          const data_2 = await response.json();
          console.log(data_2);
          changeData(data_2);
@@ -50,6 +50,13 @@ const ViewExercises = ({ navigation }) => {
                         <ExerciseImage name={item.name} />
                     </View>))}
                 </View>
+                <Pressable style={styles.btn}>
+                    <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#EB0327', '#EB0349']} style={styles.btn_m}>
+                        <Text style={styles.btn_text}>START PROCESS</Text>
+                    </LinearGradient>
+                </Pressable>
+                <Text style={styles.title2}>Description: </Text>
+                <Text>{data.descrip}</Text>
             </View>
             : ""}
             
