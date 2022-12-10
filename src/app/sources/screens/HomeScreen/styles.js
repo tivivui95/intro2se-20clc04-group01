@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     plan_picture:
     {
         position: 'relative',
+        borderRadius: 10,
         marginHorizontal: 25
     },
     search_wrapper: {
@@ -70,19 +71,20 @@ const styles = StyleSheet.create({
     },
     exercise_text: {
         fontSize: 15,
-        color: '#000000',
+        color: '#FFFFFF',
         marginLeft: 32
     },
     exercise_wrapper: {
         position: 'relative',
         width: 275,
-        height: 100,
+        height: 80,
         marginLeft: 32,
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         justifyContent: 'center',
         borderColor: '#C0C0C0',
         borderWidth: 1,
+        borderRadius: 10,
         elevation: 5
     },
 });
