@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
     const [isLoading, setLoading] = useState(true);
     const getAPI = async () => {
         try {
-        const response = await fetch('https://ab01-123-20-55-104.ap.ngrok.io/ex/1');
+        const response = await fetch('https://076d-123-20-55-104.ap.ngrok.io/ex/1');
         const my_data = await response.json();
         console.log(my_data);
         changeData(my_data);
@@ -54,11 +54,26 @@ const HomeScreen = ({ navigation }) => {
             <View>
                 <Text style={styles.title_exercise}>In-progress</Text>
             </View>  */}
-            <Text style={{ fontSize: 20, marginLeft: 32, fontWeight: 'bold',color: '#000000'}}>Today's Workout Plan</Text>
-            <Text>{data.id}</Text>
-            <Text>{data.name}</Text>
-            <Text>{data.descrip}</Text>
-            <Text>{data.duration}</Text>
+            <Text style={{ fontSize: 20, marginLeft: 32, fontWeight: 'bold',color: '#000000', marginBottom: 50}}>Today's Workout Plan</Text>
+            <View style={styles.exercise_wrapper}>
+                <Text style={{ fontWeight:'bold', color: '#000000' }}>
+                    Exercise ID:  
+                    <Text style={styles.exercise_text}>  {data.id}</Text>
+                </Text>
+                <Text style={{ fontWeight:'bold', color: '#000000' }}>
+                    Exercise name:  
+                    <Text style={styles.exercise_text}>  {data.name}</Text>
+                </Text>
+                <Text style={{ fontWeight:'bold', color: '#000000' }}>
+                    Exercise description:  
+                    <Text style={styles.exercise_text}>  {data.descrip}</Text>
+                </Text>
+                <Text style={{ fontWeight:'bold', color: '#000000' }}>
+                    Exercise duration:  
+                    <Text style={styles.exercise_text}>  {data.duration}</Text>
+                </Text>
+            </View>
+
         </View>
         
         );

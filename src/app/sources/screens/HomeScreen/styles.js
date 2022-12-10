@@ -68,8 +68,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#FFFFFF'
     },
+    exercise_text: {
+        fontSize: 15,
+        color: '#000000',
+        marginLeft: 32
+    },
     exercise_wrapper: {
-
+        position: 'relative',
+        width: 275,
+        height: 100,
+        marginLeft: 32,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 10,
+        justifyContent: 'center',
+        borderColor: '#C0C0C0',
+        borderWidth: 1,
+        elevation: 5
     },
 });
 
