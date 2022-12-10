@@ -63,7 +63,7 @@ const ViewProfile = ({ navigation }) => {
             </View>
 
             <TouchableOpacity style={styles.button}>
-                    <Text style={styles.signout}> Sign Out</Text>
+                    <Text style={styles.signout}> SIGN OUT</Text>
             </TouchableOpacity> 
         </View>
         

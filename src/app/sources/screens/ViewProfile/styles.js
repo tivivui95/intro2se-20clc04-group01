@@ -116,11 +116,10 @@ const styles = StyleSheet.create({
         width: 356,
         height: 55,
         marginLeft: 30,
-        marginTop: 350
+        marginTop: 300
       },
 
-      signout: 
-      {
+      signout: {
           position: 'relative',
           fontSize: 22,
           font: 'Poppins',
