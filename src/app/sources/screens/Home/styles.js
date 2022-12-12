@@ -9,28 +9,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    btn: {
-        position: 'absolute',
-        bottom: 152
-    },
-    btn_m: {
-        width: 356,
-        borderRadius: 6,
-        height: 55,
-        justifyContent: 'center'
-    },
-    btn_text: {
-        alignSelf: 'center',
-        fontFamily: 'Poppins',
-        fontFamily: "Poppins",
-        fontStyle: "normal",
-        fontWeight: "700",
-        fontSize: 20,
-        lineHeight: 30,
-        textAlign: "center",
-        letterSpacing: 0.4,
-        color: "#FFFFFF"
-    },
     circle: {
         position: 'absolute',
         bottom: 0,
@@ -45,11 +23,12 @@ const styles = StyleSheet.create({
         bottom: 50
     },
     sub_text: {
+        position: 'relative',
         fontFamily: 'Quicksand',
         color: '#000000',
         fontSize: 15,
         fontWeight: "bold",
-        bottom: 14
+        margin: 10
     },
     overlay: {
         position: 'absolute',
