@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
 
+import Attributes from "../../../constants/Attributes";
+import Colors from "../../../constants/Colors";
+
 const styles = StyleSheet.create({
     container: {
         flex: 1
@@ -24,16 +27,16 @@ const styles = StyleSheet.create({
     },
     sub_text: {
         position: 'relative',
-        fontFamily: 'Quicksand',
+        fontFamily: Attributes.QuicksandSemiBold,
         color: '#000000',
-        fontSize: 15,
-        fontWeight: "bold",
-        margin: 10
+        fontSize: Attributes.smallerFont,
+        marginTop: 10,
+        marginBottom: 12
     },
     overlay: {
         position: 'absolute',
-        opacity: 0.1,
-        backgroundColor: '#F3EED9',
+        opacity: 0.2,
+        backgroundColor: Colors.lightPink,
         width: '100%',
         height: '100%'
     }

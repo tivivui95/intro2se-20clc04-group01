@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, Pressable } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
+import Attributes from "../../constants/Attributes";
+
 export default FullSizeButton = ({ bgColor, txtColor, onPress, text }) => {
     return (
         <Pressable style={styles.btn} onPress={onPress}>
@@ -25,10 +27,9 @@ const styles = StyleSheet.create({
     },
     btn_text: {
         alignSelf: 'center',
-        fontFamily: 'Quicksand-Medium',
-        fontWeight: '500',
+        fontFamily: Attributes.PoppinsBold,
         fontStyle: "normal",
-        fontSize: 20,
+        fontSize: Attributes.regularFont,
         lineHeight: 30,
         textAlign: "center",
         letterSpacing: 0.4

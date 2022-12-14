@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import Colors from "../../../constants/Colors";
+import Attributes from "../../../constants/Attributes";
 
 const styles = StyleSheet.create({
     container: {
@@ -8,27 +10,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    btn: {
-        position: 'relative'
-    },
-    btn_m: {
-        width: 356,
-        borderRadius: 6,
-        height: 55,
-        justifyContent: 'center'
-    },
-    btn_text: {
-        alignSelf: 'center',
-        fontFamily: 'Poppins',
-        fontFamily: "Poppins",
-        fontStyle: "normal",
-        fontWeight: "700",
-        fontSize: 20,
-        lineHeight: 30,
-        textAlign: "center",
-        letterSpacing: 0.4,
-        color: "#FFFFFF"
     },
     circle: {
         position: 'absolute',
@@ -42,7 +23,7 @@ const styles = StyleSheet.create({
         bottom: 50
     },
     sub_text: {
-        fontFamily: 'Quicksand',
+        fontFamily: Attributes.QuicksandMedium,
         color: 'black',
         fontSize: 15,
         marginBottom: 15
@@ -50,7 +31,7 @@ const styles = StyleSheet.create({
     overlay: {
         position: 'absolute',
         opacity: 0.82,
-        backgroundColor: '#F3EED9',
+        backgroundColor: Colors.lightPink,
         width: '100%',
         height: '100%'
     },
@@ -62,7 +43,7 @@ const styles = StyleSheet.create({
         height: 55,
         marginVertical: 15,
         paddingHorizontal: 15,
-        fontFamily: 'Quicksand',
+        fontFamily: Attributes.QuicksandMedium,
         backgroundColor: 'white'
     }
 });

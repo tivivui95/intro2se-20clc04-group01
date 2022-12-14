@@ -1,4 +1,19 @@
 export default {
-    titleFont: 'Poppins',
-    subFont: 'Quicksand'
+    Poppins: 'Poppins-Regular',
+    PoppinsBold: 'Poppins-Bold',
+    PoppinsLight: 'Poppins-Light',
+    PoppinsSemiBold: 'Poppins-SemiBold',
+    PoppinsMedium: 'Poppins-Medium',
+    Quicksand: 'Quicksand-Regular',
+    QuicksandBold: 'Quicksand-Bold',
+    QuicksandLight: 'Quicksand-Light',
+    QuicksandMedium: 'Quicksand-Medium',
+    QuicksandSemiBold: 'Quicksand-SemiBold',
+    regularFont: 20,
+    largeFont: 24,
+    largerFont: 28,
+    largestFont: 32,
+    smallFont: 16,
+    smallerFont: 14,
+    tinyFont: 12,
 }
