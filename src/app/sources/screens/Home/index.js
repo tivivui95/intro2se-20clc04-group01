@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ImageBackground, View, Text, Image, Pressable, SliderComponent } from "react-native";
-import * as Animatable from 'react-native-animatable';
+
 import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from '../../../constants/Colors';
 
@@ -13,12 +13,9 @@ function Home({ navigation }) {
 
     const [count, setCount] = useState(0);
     useEffect(() => {
-        // increment the count by 1
         const countTimer = setInterval(() => {
         setCount((prevCount) => prevCount + 1);
-        // every 1000 milliseconds
         }, 2000);
-        // and clear this timer when the component is unmounted
         return function cleanup() {
         clearInterval(countTimer);
         };

@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-export default LogoImage = ({ center, color }) => {
+
+const LogoImage = ({ center, color, pulse }) => {
     return (
-        <Animatable.View animation='pulse' iterationCount='infinite' iterationDelay={1000}>
+        <Animatable.View animation={pulse==true ? 'pulse' : ''} iterationCount='infinite' iterationDelay={1000}>
         {color == 'w' ? 
         <Image 
             style={center ? {alignSelf: 'center'}: {}}
@@ -42,3 +43,5 @@ export default LogoImage = ({ center, color }) => {
         </Animatable.View>
     );
 }
+
+export default LogoImage;

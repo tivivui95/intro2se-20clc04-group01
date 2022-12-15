@@ -1,37 +1,36 @@
 import { StyleSheet } from "react-native";
+import Colors from "../../../constants/Colors";
+import Attributes from "../../../constants/Attributes";
 
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#F8E9ED',
-        width: 414,
-        height: 852,
+        backgroundColor: Colors.lightPink,
         flex: 1
     },
+    top_contain: {
+        marginHorizontal: 32,
+        marginTop: 32,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
     sayHello: {
-        position: 'relative',
-        fontSize: 20,
-        top: 46,
-        marginLeft: 32
+        fontSize: Attributes.smallFont,
+        fontFamily: Attributes.Poppins,
     },
     name: {
-        position: 'relative',
-        fontSize: 20,
-        color: '#BB2649',
+        color: Colors.vivaMagenta,
+        fontFamily: Attributes.PoppinsSemiBold
     },
     title: {
-        position: 'relative',
-        color: '#BB2649',
-        fontSize: 25,
-        fontWeight: "bold",
-        paddingLeft: 32,
+        color: Colors.vivaMagenta,
+        fontSize: Attributes.largeFont,
+        fontFamily: Attributes.PoppinsSemiBold,
+        lineHeight: Attributes.largeFont
     },
     ava_picture:
     {
-        position: 'relative',
         resizeMode: 'contain',
-        top: 25,
-        left: 334
     },
     plan_picture:
     {
@@ -39,20 +38,18 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginHorizontal: 25
     },
-    search_wrapper: {
-        position: 'relative',
-        width: 300,
-        height: 50,
-        marginTop: 10,
-        marginLeft: 30,
-        paddingHorizontal: 20,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: '#C0C0C0',
-        borderWidth: 1,
-        elevation: 5
+    text_input: {
+        borderColor: 'black',
+        borderRadius: 6,
+        height: 36,
+        marginHorizontal: 32,
+        marginVertical: 16,
+        paddingHorizontal: 15,
+        fontFamily: Attributes.QuicksandMedium,
+        backgroundColor: 'white'
+    },
+    title_text: {
+        
     },
     title_exercise: {
         position: 'relative',
@@ -76,9 +73,6 @@ const styles = StyleSheet.create({
     },
     exercise_wrapper: {
         position: 'relative',
-        width: 275,
-        height: 80,
-        marginLeft: 32,
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         justifyContent: 'center',

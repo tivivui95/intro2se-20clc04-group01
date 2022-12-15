@@ -13,8 +13,8 @@ const Login = ({ navigation }) => {
         <View style={styles.container}>
             <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
                 <View style={styles.overlay}></View>
-                <LogoImage center={true} color='p' />
                 <View style={styles.circle}>  
+                    <LogoImage center={true} color='p' />
                     <TextInput 
                         inlineImageLeft='mail'
                         inlineImagePadding={30}
@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
                             bgColor={Colors.vivaMagenta} 
                             txtColor={Colors.defaultWhite} 
                             text='SIGN IN' 
-                            onPress={() => navigation.navigate("Login")} 
+                            onPress={() => navigation.navigate("HomeScreen")} 
                         />
                 </View>
             </ImageBackground>
