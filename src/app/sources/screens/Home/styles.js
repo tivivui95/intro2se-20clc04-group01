@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
 
+import Attributes from "../../../constants/Attributes";
+import Colors from "../../../constants/Colors";
+
 const styles = StyleSheet.create({
     container: {
         flex: 1
@@ -8,28 +11,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    btn: {
-        position: 'absolute',
-        bottom: 152
-    },
-    btn_m: {
-        width: 356,
-        borderRadius: 6,
-        height: 55,
-        justifyContent: 'center'
-    },
-    btn_text: {
-        alignSelf: 'center',
-        fontFamily: 'Poppins',
-        fontFamily: "Poppins",
-        fontStyle: "normal",
-        fontWeight: "700",
-        fontSize: 20,
-        lineHeight: 30,
-        textAlign: "center",
-        letterSpacing: 0.4,
-        color: "#FFFFFF"
     },
     circle: {
         position: 'absolute',
@@ -45,16 +26,17 @@ const styles = StyleSheet.create({
         bottom: 50
     },
     sub_text: {
-        fontFamily: 'Quicksand',
+        position: 'relative',
+        fontFamily: Attributes.QuicksandSemiBold,
         color: '#000000',
-        fontSize: 15,
-        fontWeight: "bold",
-        bottom: 14
+        fontSize: Attributes.smallerFont,
+        marginTop: 10,
+        marginBottom: 12
     },
     overlay: {
         position: 'absolute',
-        opacity: 0.1,
-        backgroundColor: '#F3EED9',
+        opacity: 0.2,
+        backgroundColor: Colors.lightPink,
         width: '100%',
         height: '100%'
     }

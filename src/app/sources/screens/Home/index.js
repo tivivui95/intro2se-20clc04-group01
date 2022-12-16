@@ -1,31 +1,51 @@
-import React from "react";
-import { ImageBackground, View, Text, Image, Pressable } from "react-native";
-import LinearGradient from 'react-native-linear-gradient';
+import React, { useState, useEffect } from "react";
+import { ImageBackground, View, Text, Image, Pressable, SliderComponent } from "react-native";
+
+import FullSizeBtn from "../../components/FullSizeBtn";
+import Colors from '../../../constants/Colors';
 
 import styles from "./styles";
 
+import LoadingAnimation from "../../components/LoadingAnimation";
+import LogoImage from '../../components/Logo';
+
 function Home({ navigation }) {
+
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        const countTimer = setInterval(() => {
+        setCount((prevCount) => prevCount + 1);
+        }, 2000);
+        return function cleanup() {
+        clearInterval(countTimer);
+        };
+    });
+
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
-                {/* <Image source={require('../../../assets/images/logo-w.png')}  alt='logo' /> */}
-                <View style={styles.overlay}></View>
-                <ImageBackground source={require('../../../assets/images/intro_img.png')} resizeMode="cover" style={styles.circle}>   
-                    <Pressable style={styles.btn} onPress={() => navigation.navigate("Login")}>
-                        <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#BB2649', '#BB2649']} style={styles.btn_m}>
-                            <Text style={styles.btn_text}>SIGN IN</Text>
-                        </LinearGradient>
-                    </Pressable>
-
-                    <Text style={styles.sub_text}>If you are new to use</Text>
-
-                    <Pressable style={styles.btn_s} onPress={() => navigation.navigate("Signup")}>
-                        <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#9DA9DF', '#9DA9DF']} style={styles.btn_m}>
-                            <Text style={styles.btn_text}>SIGN UP</Text>
-                        </LinearGradient>
-                    </Pressable>
+            {count < 1 ? 
+            <LoadingAnimation color={Math.floor(Math.random() * 12)} />:
+                <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
+                    <LogoImage center={true} color='w' />
+                    <View style={styles.overlay}></View>
+                    <ImageBackground source={require('../../../assets/images/intro_img.png')} resizeMode="cover" style={styles.circle}>   
+                        <FullSizeBtn 
+                            bgColor={Colors.vivaMagenta} 
+                            txtColor={Colors.defaultWhite} 
+                            text='SIGN IN' 
+                            onPress={() => navigation.navigate("Login")} 
+                        />
+                        <Text style={styles.sub_text}>If you are new to use</Text>
+                        <FullSizeBtn 
+                            bgColor={Colors.defaultWhite} 
+                            txtColor={Colors.vivaMagenta} 
+                            text='SIGN UP' 
+                            onPress={() => navigation.navigate("Signup")} 
+                        />
+                        <View style={{ margin: 20 }}></View>
+                    </ImageBackground>
                 </ImageBackground>
-            </ImageBackground>
+            }            
         </View>
     )
 }

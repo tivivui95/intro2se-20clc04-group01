@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     btn_text: {
         alignSelf: 'center',
         fontFamily: 'Poppins',
-        fontFamily: "Poppins",
         fontStyle: "normal",
         fontWeight: "700",
         fontSize: 20,
