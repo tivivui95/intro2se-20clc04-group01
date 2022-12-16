@@ -93,9 +93,31 @@ const cmtAndRateSchema = new mongoose.Schema({
     }
 });
 
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    isAdmin:{
+        type: Boolean,
+        default: false
+    }
+}, {timestamps: true});
+
 let Series = mongoose.model("Series", seriesSchema);
 let MuscleGroup = mongoose.model("Group", muscleGroupSchema);
 let Exercises = mongoose.model("Exercises", exercisesSchema);
 let CmtAndRate = mongoose.model("CmtAndRate", cmtAndRateSchema);
+let Users = mongoose.model("Users", userSchema);
 
-module.exports = { Exercises, Series, MuscleGroup, CmtAndRate};
+module.exports = { Exercises, Series, MuscleGroup, CmtAndRate, Users};
