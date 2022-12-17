@@ -3,29 +3,13 @@ import Colors from "../../../constants/Colors";
 import Attributes from "../../../constants/Attributes";
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    bg: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    circle: {
-        position: 'absolute',
-        bottom: 55,
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'flex-end'
-    },
-    btn_s: {
-        position: 'absolute',
-        bottom: 50
+    bottom: {
+        bottom: 56
     },
     sub_text: {
         fontFamily: Attributes.QuicksandMedium,
-        color: 'black',
-        fontSize: 15,
+        color: Colors.defaultBlack,
+        fontSize: Attributes.smallerFont,
         marginBottom: 15
     },
     overlay: {
@@ -36,15 +20,16 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     text_input: {
-        borderColor: 'black',
+        borderColor: Colors.defaultBlack,
         borderWidth: 1,
         width: 356,
         borderRadius: 6,
         height: 55,
         marginVertical: 15,
         paddingHorizontal: 15,
+        fontSize: Attributes.smallerFont,
         fontFamily: Attributes.QuicksandMedium,
-        backgroundColor: 'white'
+        backgroundColor: Colors.defaultWhite
     }
 });
 

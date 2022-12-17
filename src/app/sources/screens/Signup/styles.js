@@ -3,24 +3,8 @@ import Colors from "../../../constants/Colors";
 import Attributes from "../../../constants/Attributes";
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    bg: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    circle: {
-        position: 'absolute',
-        bottom: 55,
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'flex-end'
-    },
-    btn_s: {
-        position: 'absolute',
-        bottom: 50
+    bottom: {
+        bottom: 55
     },
     overlay: {
         position: 'absolute',
@@ -30,7 +14,7 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     text_input: {
-        borderColor: 'black',
+        borderColor: Colors.defaultBlack,
         borderWidth: 1,
         width: 356,
         borderRadius: 6,
@@ -38,10 +22,7 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         paddingHorizontal: 15,
         fontFamily: Attributes.QuicksandMedium,
-        backgroundColor: 'white'
-    },
-    logo: {
-        marginBottom: 20
+        backgroundColor: Colors.defaultWhite
     }
 });
 

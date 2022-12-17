@@ -4,30 +4,20 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Realm from "realm";
 
 import Connections from '../../../constants/Connections';
-import Colors from "../../../constants/Colors";
+import globalStyles from "../globalStyles";
 import styles from "./styles";  
 
 import LoadingAnimation from '../../components/LoadingAnimation';
+
+import { getUserInfo, modifyUserInfo } from "../../functions/realmDB";
+import ExPanel from "../../components/ExPanel";
 
 const HomeScreen = ({ navigation }) => {
     const [ data, changeData ] = useState("");
     const [isLoading, setLoading] = useState(true);
     const [ connectState, changeConnectState ] = useState(false);
-    const realm = new Realm({ path: 'UserDatabase.realm' }); 
-    const userInfo = realm.objects('user_details')[0]
-    // const realmData = () => {
-    //     realm.write(() => {
-    //         realm.create('user_details', {
-    //             user_id: 0,
-    //             user_name: 'Minh Văn',
-    //             user_lastname: 'Nguyễn',
-    //             user_email: 'van23112002@gmail.com',
-    //             user_height: 170,
-    //             user_weights: 65
-    //           });
-    //     });
-    // }
-
+    const [count, setCount] = useState(0);
+    const userInfo = getUserInfo();
     const getAPI = async () => {
         try {
             const response = await fetch(Connections.serverURL + '/ex/1');
@@ -44,10 +34,16 @@ const HomeScreen = ({ navigation }) => {
         // Run! Like go get some data from an API.
         getAPI();
         // realmData();
+        const countTimer = setInterval(() => {
+            setCount((prevCount) => prevCount + 1);
+            }, 1000);
+            return function cleanup() {
+            clearInterval(countTimer);
+            };
       }, []);
     return (    
-        <View style={styles.container}>
-            <View style={styles.top_contain}>
+        <View style={[globalStyles.roundPadding, globalStyles.container, styles.container]}>
+            <View style={globalStyles.two_col}>
                 <View>
                     <Text style={styles.sayHello}>Hello
                         <Text style={styles.name}> {userInfo.user_name}</Text>
@@ -63,7 +59,13 @@ const HomeScreen = ({ navigation }) => {
                 style={styles.text_input} 
                 placeholder={'Search exercise...'} 
             />
-            <Text style={styles.title_text}>Today's Workout Plan</Text>
+            <Text style={globalStyles.blackTitleSmall}>Today's Workout Plan</Text>
+            <View style={globalStyles.two_col}>
+                <ExPanel title='Push up' width='47%' style={styles.ex_today} />
+                <ExPanel title='Hip hop' width='47%' style={styles.ex_today} />
+            </View>
+
+            <View style={{ padding: 12 }}></View>
             <View style={styles.exercise_wrapper}>
                 <ImageBackground style={styles.picture} source={require('../../../assets/images/pushup.png')} resizeMode='cover'>
                     <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>

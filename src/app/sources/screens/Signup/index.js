@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { ImageBackground, View, Text, Image, Pressable, TextInput } from "react-native";
 import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from "../../../constants/Colors";
+
 import styles from "./styles";
+import globalStyles from "../globalStyles";
+
 import LogoImage from "../../components/Logo";
 
 const Signup = ({ navigation }) => {
@@ -10,11 +13,16 @@ const Signup = ({ navigation }) => {
     const [ password, changePassword ] = useState("");
     const [ cfpassword, changeCfPassword ] = useState("");
     return (
-        <View style={styles.container}>
-            <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
+        <View style={globalStyles.container}>
+            <ImageBackground 
+              source={require('../../../assets/images/bg-2.png')} 
+              resizeMode="cover" 
+              style={[globalStyles.center_container]}
+            >
                 <View style={styles.overlay}></View>
-                <View style={styles.circle}>  
+                <View style={[styles.bottom, globalStyles.bottom_flex]}>  
                     <LogoImage center={true} color='p' />
+                    <Text style={globalStyles.blackTitle}>Sign up</Text>
                     <TextInput 
                         placeholder="Email"
                         inlineImageLeft='mail'

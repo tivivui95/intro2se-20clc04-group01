@@ -5,14 +5,7 @@ import Attributes from "../../../constants/Attributes";
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: Colors.lightPink,
-        flex: 1
-    },
-    top_contain: {
-        marginHorizontal: 32,
-        marginTop: 32,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+        backgroundColor: Colors.lightPink
     },
     sayHello: {
         fontSize: Attributes.smallFont,
@@ -28,6 +21,13 @@ const styles = StyleSheet.create({
         fontFamily: Attributes.PoppinsSemiBold,
         lineHeight: Attributes.largeFont
     },
+    ex_today: {
+        borderRadius: 16,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        overflow: 'hidden',
+        height: 180
+    },
     ava_picture:
     {
         resizeMode: 'contain',
@@ -39,14 +39,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 25
     },
     text_input: {
-        borderColor: 'black',
         borderRadius: 6,
         height: 36,
-        marginHorizontal: 32,
         marginVertical: 16,
         paddingHorizontal: 15,
         fontFamily: Attributes.QuicksandMedium,
-        backgroundColor: 'white'
+        backgroundColor: Colors.defaultWhite
     },
     title_text: {
         

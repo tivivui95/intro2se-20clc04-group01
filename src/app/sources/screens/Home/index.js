@@ -5,6 +5,7 @@ import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from '../../../constants/Colors';
 
 import styles from "./styles";
+import globalStyles from "../globalStyles";
 
 import LoadingAnimation from "../../components/LoadingAnimation";
 import LogoImage from '../../components/Logo';
@@ -15,20 +16,27 @@ function Home({ navigation }) {
     useEffect(() => {
         const countTimer = setInterval(() => {
         setCount((prevCount) => prevCount + 1);
-        }, 2000);
+        }, 1000);
         return function cleanup() {
         clearInterval(countTimer);
         };
     });
 
     return (
-        <View style={styles.container}>
-            {count < 1 ? 
+        <View style={globalStyles.container}>
+            {count < 2 ? 
             <LoadingAnimation color={Math.floor(Math.random() * 12)} />:
-                <ImageBackground source={require('../../../assets/images/bg-2.png')} resizeMode="cover" style={styles.bg}>
+                <ImageBackground 
+                  source={require('../../../assets/images/bg-2.png')} 
+                  resizeMode="cover" 
+                  style={globalStyles.center_container}
+                >
                     <LogoImage center={true} color='w' />
                     <View style={styles.overlay}></View>
-                    <ImageBackground source={require('../../../assets/images/intro_img.png')} resizeMode="cover" style={styles.circle}>   
+                    <ImageBackground 
+                      source={require('../../../assets/images/intro_img.png')} 
+                      resizeMode="cover" 
+                      style={[styles.circle, globalStyles.bottom_flex]}>   
                         <FullSizeBtn 
                             bgColor={Colors.vivaMagenta} 
                             txtColor={Colors.defaultWhite} 
