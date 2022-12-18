@@ -65,7 +65,7 @@ const HomeScreen = ({ navigation }) => {
                 <ExPanel title='Hip hop' width='47%' style={styles.ex_today} />
             </View>
 
-            <View style={{ padding: 12 }}></View>
+            <View style={{ padding: 12  }}></View>
             <View style={styles.exercise_wrapper}>
                 <ImageBackground style={styles.picture} source={require('../../../assets/images/pushup.png')} resizeMode='cover'>
                     <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
