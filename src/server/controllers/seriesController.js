@@ -27,6 +27,16 @@ const seriesController = {
             res.status(500).json(error.message)
         }
     },
+    updateASeries: async (req, res) =>{
+        try {
+            const updatedSeries = await Series.findOneAndUpdate({series_id: req.params.id}, {$set: req.body});
+            if (!updatedSeries)
+                res.status(500).send('This series id does not exists.');
+            else res.status(200).send("Update series successfully!")
+        } catch (err) {
+            res.status(500).json({ success: false, msg: err.message });
+        }
+    },
     deleteASeries: async (req, res) =>{
         try {
             const deletedSeries = await Series.findOneAndDelete({series_id: req.params.id})
