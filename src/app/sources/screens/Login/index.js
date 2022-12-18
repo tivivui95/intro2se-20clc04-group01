@@ -42,7 +42,7 @@ const Login = ({ navigation }) => {
                             bgColor={Colors.vivaMagenta} 
                             txtColor={Colors.defaultWhite} 
                             text='SIGN IN' 
-                            onPress={() => navigation.navigate("HomeScreen")} 
+                            onPress={() => navigation.navigate("MainTabs")} 
                         />
                 </View>
             </ImageBackground>

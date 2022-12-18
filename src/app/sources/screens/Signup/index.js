@@ -49,7 +49,7 @@ const Signup = ({ navigation }) => {
                             bgColor={Colors.defaultWhite} 
                             txtColor={Colors.vivaMagenta} 
                             text='SIGN UP' 
-                            onPress={() => navigation.navigate("HomeScreen")} 
+                            onPress={() => navigation.navigate("MainTabs")} 
                         />
                 </View>
             </ImageBackground>

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         overflow: 'hidden',
-        height: 180
+        height: 170,
     },
     ava_picture:
     {
@@ -46,39 +46,12 @@ const styles = StyleSheet.create({
         fontFamily: Attributes.QuicksandMedium,
         backgroundColor: Colors.defaultWhite
     },
-    title_text: {
-        
-    },
-    title_exercise: {
-        position: 'relative',
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#000000',
-        marginTop:10,
-        marginBottom: 150,
-        marginLeft: 32
-    }, 
-    name_exercise: {
-        position: 'relative',
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#FFFFFF'
-    },
-    exercise_text: {
-        fontSize: 15,
-        color: '#FFFFFF',
-        marginLeft: 32
-    },
-    exercise_wrapper: {
-        position: 'relative',
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        justifyContent: 'center',
-        borderColor: '#C0C0C0',
-        borderWidth: 1,
-        borderRadius: 10,
-        elevation: 5
-    },
+    loadingcontain: {
+        flex: 1,
+        height: 180,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });
 
 export default styles;

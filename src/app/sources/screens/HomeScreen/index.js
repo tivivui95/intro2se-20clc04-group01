@@ -1,42 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, ImageBackground, View, Text, Image, Pressable, TextInput, FlatList, ListViewComponent } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Realm from "realm";
 
-import Connections from '../../../constants/Connections';
 import globalStyles from "../globalStyles";
 import styles from "./styles";  
 
 import LoadingAnimation from '../../components/LoadingAnimation';
-
-import { getUserInfo, modifyUserInfo } from "../../functions/realmDB";
 import ExPanel from "../../components/ExPanel";
 
+import { getUserInfo, modifyUserInfo, createUserInfo } from "../../functions/realmDB";
+import { GetAllSeries } from "../../functions/APIData";
+
 const HomeScreen = ({ navigation }) => {
-    const [ data, changeData ] = useState("");
-    const [isLoading, setLoading] = useState(true);
-    const [ connectState, changeConnectState ] = useState(false);
+    const [data, changeData] = useState([]);
     const [count, setCount] = useState(0);
+    // createUserInfo('Văn', 'Nguyễn', 'van23112002@gmail.com', 170, 65);
     const userInfo = getUserInfo();
-    const getAPI = async () => {
-        try {
-            const response = await fetch(Connections.serverURL + '/ex/1');
-            const my_data = await response.json();
-            console.log(my_data);
-            changeData(my_data);
-       } catch (error) {
-            // console.error(error);
-            changeConnectState(true);
-       } finally {
-       }
+
+    const waitData = async () => {
+        changeData(await GetAllSeries());
     }
     useEffect(() => {
         // Run! Like go get some data from an API.
-        getAPI();
-        // realmData();
+        waitData();
         const countTimer = setInterval(() => {
             setCount((prevCount) => prevCount + 1);
-            }, 1000);
+            }, 2000);
             return function cleanup() {
             clearInterval(countTimer);
             };
@@ -59,32 +47,23 @@ const HomeScreen = ({ navigation }) => {
                 style={styles.text_input} 
                 placeholder={'Search exercise...'} 
             />
+
             <Text style={globalStyles.blackTitleSmall}>Today's Workout Plan</Text>
             <View style={globalStyles.two_col}>
                 <ExPanel title='Push up' width='47%' style={styles.ex_today} />
                 <ExPanel title='Hip hop' width='47%' style={styles.ex_today} />
             </View>
-
-            <View style={{ padding: 12  }}></View>
-            <View style={styles.exercise_wrapper}>
-                <ImageBackground style={styles.picture} source={require('../../../assets/images/pushup.png')} resizeMode='cover'>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Exercise ID:  
-                        <Text style={styles.exercise_text}>  {data.id}</Text>
-                    </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Name:  
-                        <Text style={styles.exercise_text}>  {data.name}</Text>
-                    </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Description:  
-                        <Text style={styles.exercise_text}>  {data.descrip}</Text>
-                    </Text>
-                    <Text style={{ fontWeight:'bold', color: '#FFFFFF', fontSize: 15 }}>
-                        Duration:  
-                        <Text style={styles.exercise_text}>  {data.duration}</Text>
-                    </Text>
-                </ImageBackground>
+            <View style={{ padding: 10 }}></View>
+            <Text style={globalStyles.blackTitleSmall}>Category</Text>
+            <View style={globalStyles.two_col}>
+                {data[0] ? data.map((item) => 
+                    <ExPanel key={item._id} title={item.name} width='47%' style={styles.ex_today} />
+                ) : 
+                <View style={styles.loadingcontain}>
+                    <LoadingAnimation color={Math.floor(Math.random() * 12)} />
+                </View>
+                    
+                }
             </View>
         </View>
         );
