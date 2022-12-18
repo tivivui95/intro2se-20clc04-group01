@@ -7,7 +7,7 @@ const muscleGroupController = {
             const savedMuscleGroup = await newMuscleGroup.save();
             res.status(200).json(savedMuscleGroup);
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).json({ success: false, msg: err.message });
         }
     },
     getAllMuscleGroup: async (req, res) =>{
@@ -15,7 +15,7 @@ const muscleGroupController = {
             const groups = await MuscleGroup.find();
             res.status(200).json(groups);
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).json({ success: false, msg: err.message });
         }
     },
     getAGroup: async(req, res) =>{
@@ -23,7 +23,17 @@ const muscleGroupController = {
             const group = await MuscleGroup.findOne({group_id: req.params.id}).populate("exercises", "id name video descrip duration");
             res.status(200).json(group);
         } catch (error) {
-            res.status(500).json(error.message)
+            res.status(500).json({ success: false, msg: err.message });
+        }
+    },
+    updateAGroup: async (req, res) =>{
+        try {
+            const updatedGroup = await MuscleGroup.findOneAndUpdate({group_id: req.params.id}, {$set: req.body});
+            if (!updatedGroup)
+                res.status(500).send('This muscle group id does not exists.');
+            else res.status(200).send("Update muslce group successfully!")
+        } catch (err) {
+            res.status(500).json({ success: false, msg: err.message });
         }
     },
     deleteAGroup: async (req, res) =>{
