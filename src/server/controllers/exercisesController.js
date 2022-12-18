@@ -56,13 +56,37 @@ const exercisesController = {
     },
     updateExercises: async(req, res) =>{
         try {
+            let msg = "";
+            const exercisesToUpdate = await Exercises.findOne({id: req.params.id});
             if (req.body.series_id){
                 
+                const series = await Series.findOne({series_id: req.body.series_id});
+                if (!(await series)){
+                    msg += "Series ID không tồn tại, vui lòng cập nhật lại sau!\n"
+                }
+                else{
+                    await Series.findOneAndUpdate({_id: exercisesToUpdate.series}, {$pull: {exercises: exercisesToUpdate._id}});
+                    await series.updateOne({$push: {exercises: exercisesToUpdate._id}});
+                    await exercisesToUpdate.updateOne({$set: {series: series._id}});
+                }
             }
-            const updatedExercises = await Exercises.findOneAndUpdate({id: req.params.id}, {$set: req.body});
-            if (!updatedExercises)
-                res.status(500).send('This exercises id does not exists.');
-            else res.status(200).send("Update exercises successfully!")
+            if (req.body.group_id){
+                
+                const group = await MuscleGroup.findOne({group_id: req.body.group_id});
+                if (!(await group)){
+                    msg += "Muscle group ID không tồn tại, vui lòng cập nhật lại sau!\n"
+                }
+                else{
+                    await MuscleGroup.findOneAndUpdate({_id: exercisesToUpdate.group}, {$pull: {exercises: exercisesToUpdate._id}});
+                    await group.updateOne({$push: {exercises: exercisesToUpdate._id}});
+                    await exercisesToUpdate.updateOne({$set: {group: group._id}});
+                }
+            }
+            const updated = await exercisesToUpdate.update({$set: req.body});
+            //const updatedExercises = await Exercises.findOneAndUpdate({id: req.params.id}, {$set: req.body});
+            if (!updated)
+                res.status(500).send(msg + 'This exercises id does not exists.');
+            else res.status(200).send(msg + "Update exercises successfully!")
         } catch (err) {
             res.status(500).json({ success: false, msg: err.message });
         }
