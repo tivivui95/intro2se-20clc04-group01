@@ -10,7 +10,7 @@ import Search from '../screens/Search'
 
 import Colors from '../../constants/Colors';
 
-function MainTabs() {
+function MainTabs({ navigation }) {
   return (
     <Tab.Navigator 
       screenOptions={{ 
