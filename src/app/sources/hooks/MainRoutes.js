@@ -7,6 +7,7 @@ import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 
 import MainTabs from './TabRoutes';
+import ChangePassword from '../screens/ChangePassword';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ function MainRoutes() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>
