@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { ImageBackground, View, Text, Image, Pressable, TextInput, Switch} from "react-native";
-import CheckBox from '@react-native-community/checkbox';
+import { ImageBackground, View, Text, Image, Pressable, TextInput, Switch, CheckBox } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import FullSizeBtn from "../../components/FullSizeBtn";
@@ -13,7 +12,7 @@ import LogoImage from '../../components/Logo';
 
 const NotiReminder = ({ navigation }) => {
     const [isEnabled, setIsEnabled] = useState(false);
-    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [isSelected, setSelection] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
         <View style={globalStyles.container}>
@@ -31,11 +30,7 @@ const NotiReminder = ({ navigation }) => {
             </View>
             <Text style={styles.smallText}>Reminder starts at 7:00 am every day.</Text>
             <Text style={[styles.smallText, { marginTop:50 }]}>Remind everday</Text>
-            {/* <CheckBox
-            disabled={false}
-            value={toggleCheckBox}
-            onValueChange={(newValue) => setToggleCheckBox(newValue)}
-            /> */}
+
         </View>
     )
 }
