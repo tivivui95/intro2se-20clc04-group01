@@ -11,9 +11,9 @@ import Colors from '../../../constants/Colors';
 import LogoImage from '../../components/Logo';
 
 const ChangePassword = ({ navigation }) => {
-    const [ currentPassword, changeCurrentPassword ] = useState("");
-    const [ newPassword, changeNewPassword ] = useState("");
-    const [ con_newPassword, changeCon_NewPassword ] = useState("");
+    const [ currentpassword, changeCurrentPassword ] = useState("");
+    const [ newpassword, changeNewPassword ] = useState("");
+    const [ cfpassword, changeCfPassword ] = useState("");
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
@@ -26,22 +26,22 @@ const ChangePassword = ({ navigation }) => {
                         inlineImageLeft='lock'
                         inlineImagePadding={30}
                         placeholder="Current password"
-                        value={currentPassword}
+                        value={currentpassword}
                         onChangeText={changeCurrentPassword}
                         style={styles.text_input} /> 
                     <TextInput 
                         inlineImageLeft='lock'
                         placeholder="New password"
                         inlineImagePadding={30}
-                        value={newPassword}
+                        value={newpassword}
                         onChangeText={changeNewPassword}
                         style={styles.text_input} /> 
                     <TextInput 
                         inlineImageLeft='lock'
                         placeholder="Confirmation new password"
                         inlineImagePadding={30}
-                        value={con_newPassword}
-                        onChangeText={changeCon_NewPassword}
+                        value={cfpassword}
+                        onChangeText={changeCfPassword}
                         style={styles.text_input} /> 
                     <View style={styles.Btn_Pos}>
                         <FullSizeBtn    
