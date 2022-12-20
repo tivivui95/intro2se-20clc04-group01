@@ -5,10 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Attributes from "../../../constants/Attributes";
 import styles from "./styles";
+import { getUserInfo, modifyUserInfo, createUserInfo } from "../../functions/realmDB";
 
 const ViewProfile = ({ navigation }) => {
     const [ data, changeData ] = useState("");
     const [isLoading, setLoading] = useState(true);
+    const userInfo = getUserInfo();
     const getAPI = async () => {
         try {
         const response = await fetch('https://d200-171-226-38-247.ap.ngrok.io/ex/1');
@@ -27,7 +29,7 @@ const ViewProfile = ({ navigation }) => {
     return (
     // <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-            <Text style={styles.userName}>Duong Minh Tung</Text>
+            <Text style={styles.userName}>{userInfo.user_name}</Text>
             <Text style={styles.nickname}>Toshiro</Text>
 
             <Image 
