@@ -46,8 +46,8 @@ const ForgotPassword = ({ navigation }) => {
                         style={styles.text_input} />
                     <View style={{ margin: 5 }}></View>
                     <FullSizeBtn 
-                            bgColor={Colors.defaultWhite} 
-                            txtColor={Colors.vivaMagenta} 
+                            bgColor={Colors.vivaMagenta} 
+                            txtColor={Colors.defaultWhite} 
                             text='SAVE CHANGE' 
                             onPress={() => navigation.navigate("MainTabs")} 
                         />
