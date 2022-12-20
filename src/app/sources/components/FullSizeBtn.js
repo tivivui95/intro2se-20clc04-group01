@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         width: 356,
         borderRadius: 6,
         height: 55,
-        justifyContent: 'center'
+        justifyContent: 'center', 
+        elevation: 5
     },
     btn_text: {
         alignSelf: 'center',
