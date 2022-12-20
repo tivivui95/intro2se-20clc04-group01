@@ -10,16 +10,18 @@ import MainTabs from './TabRoutes';
 import ChangePassword from '../screens/ChangePassword';
 import ForgotPassword from '../screens/ForgotPassword';
 import NotiReminder from '../screens/NotiReminder';
+import ViewProfile from '../screens/ViewProfile';
 
 const Stack = createNativeStackNavigator();
 
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ViewProfile">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="ViewProfile" component={ViewProfile} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="NotiReminder" component={NotiReminder} />

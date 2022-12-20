@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 
+import Attributes from "../../../constants/Attributes";
+
 const styles = StyleSheet.create({
 
     container: {
@@ -11,10 +13,9 @@ const styles = StyleSheet.create({
     userName: 
     {
         position: 'relative',
-        fontSize: 22,
-        top: 130,
-        font: 'Poppins',
-        fontWeight: 'bold',
+        fontSize: 25,
+        top: 170,
+        fontFamily: Attributes.PoppinsBold,
         textAlign: 'center',
         color: '#BB2649'
     },
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     nickname: {
         position: 'relative',
         fontSize: 15,
-        top: 130,
+        top: 160,
         font: 'Roboto',
         fontWeight: 'bold',
         textAlign: 'center',
@@ -31,16 +32,10 @@ const styles = StyleSheet.create({
 
     ava_picture:
     {
-        position: 'relative',
-        resizeMode: 'stretch',
-        marginTop: 20,
-        marginLeft: 190,
-
-    },
-    plan_picture: {
-        position: 'relative',
-        borderRadius: 10,
-        marginHorizontal: 25
+        width: 100,
+        height: 100,
+        borderRadius: 100/2,
+        marginLeft: 155
     },
 
     exercise_text: {
@@ -116,17 +111,32 @@ const styles = StyleSheet.create({
         width: 356,
         height: 55,
         marginLeft: 30,
-        marginTop: 300
+        marginTop: 200
       },
 
-      signout: {
+    signout: {
           position: 'relative',
-          fontSize: 22,
-          font: 'Poppins',
-          fontWeight: 'bold',
+          fontFamily: Attributes.PoppinsBold,
+          fontSize: Attributes.regularFont,
           textAlign: 'center',
           color: '#BB2649'
       },
+    buttonchange: {
+        alignItems: "center",
+        backgroundColor: "#FCF2F4",
+        marginLeft: 30,
+        width: 356,
+        height: 55,
+        marginTop: 10,
+        padding: 10,
+    },
+    changePassword: {
+        position: 'relative',
+        fontFamily: Attributes.PoppinsBold,
+        fontSize: Attributes.regularFont,
+        textAlign: 'center',
+        color: '#BB2649'
+    },
 });
 
 export default styles;

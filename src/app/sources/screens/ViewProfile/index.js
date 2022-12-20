@@ -3,6 +3,7 @@ import { ActivityIndicator, ImageBackground, View, Text, Image, Pressable, TextI
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import Attributes from "../../../constants/Attributes";
 import styles from "./styles";
 
 const ViewProfile = ({ navigation }) => {
@@ -31,40 +32,44 @@ const ViewProfile = ({ navigation }) => {
 
             <Image 
                 style={styles.ava_picture}
-                source={require('../../../assets/images/profile.png')}
+                source={require('../../../assets/images/Doggo.png')}
             />
 
             <View style={styles.name_wrapper}>
-                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                    <Text style={{ fontFamily: Attributes.PoppinsBold, color: '#000000', fontSize: Attributes.smallFont }}>
                         Email:  
                         <Text style={styles.exercise_text}>  {data.name}</Text>
                     </Text>
             </View>
 
             <View style={styles.gender_wrapper}>
-                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                    <Text style={{ fontFamily: Attributes.PoppinsBold, color: '#000000', fontSize: Attributes.smallFont }}>
                         Gender:  
                         <Text style={styles.exercise_text}>  {data.descrip}</Text>
                     </Text>
             </View>
 
             <View style={styles.height_wrapper}>
-                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                    <Text style={{ fontFamily: Attributes.PoppinsBold, color: '#000000', fontSize: Attributes.smallFont}}>
                         Height:  
                         <Text style={styles.exercise_text}>  {data.id}</Text>
                     </Text>
             </View>
 
             <View style={styles.weight_wrapper}>
-                    <Text style={{ fontWeight:'bold', color: '#000000', fontSize: 15 }}>
+                    <Text style={{ fontFamily: Attributes.PoppinsBold, color: '#000000', fontSize: Attributes.smallFont }}>
                         Weight:  
                         <Text style={styles.exercise_text}>  {data.duration}</Text>
                     </Text>
             </View>
 
             <TouchableOpacity style={styles.button}>
-                    <Text style={styles.signout}> SIGN OUT</Text>
+                    <Text style={styles.changePassword}> CHANGE PASSWORD</Text>
             </TouchableOpacity> 
+
+            <TouchableOpacity style={styles.buttonchange}>
+                    <Text style={styles.signout}> SIGN OUT</Text>
+            </TouchableOpacity>
         </View>
         
         );
