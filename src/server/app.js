@@ -9,6 +9,7 @@ const exercisesRoute = require('./routes/exercises');
 const seriesRoute = require('./routes/series');
 const muscleGroupRoute = require('./routes/group');
 const authRoute = require('./routes/auth');
+const userRoute = require('./routes/user');
 
 app.use(bodyParser.json({limit:"50mb"}));
 app.use(cors());
@@ -18,6 +19,8 @@ app.use("/ex", exercisesRoute);
 app.use('/series', seriesRoute);
 app.use('/mg', muscleGroupRoute);
 app.use('/auth', authRoute);
+app.use('/user', userRoute);
+
 
 //connect DB
 mongoose.connect(process.env.DB_CONNECTION, () =>{

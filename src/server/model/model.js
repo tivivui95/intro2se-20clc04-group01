@@ -78,15 +78,13 @@ const cmtAndRateSchema = new mongoose.Schema({
     },
     rate: {
         type: Number,
-        min: 1,
-        max: 0,
         required: true
     },
     cmt:{
         type: String,
         required: true
     },
-    excersise_id:{
+    exercise_id:{
         type: Number,
         ref: "Exercises",
         required: true
