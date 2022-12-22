@@ -11,6 +11,7 @@ import ChangePassword from '../screens/ChangePassword';
 import ForgotPassword from '../screens/ForgotPassword';
 import NotiReminder from '../screens/NotiReminder';
 import ViewProfile from '../screens/ViewProfile';
+import EnterBio from '../screens/EnterBio';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ function MainRoutes() {
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="NotiReminder" component={NotiReminder} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        <Stack.Screen name="EnterBio" component={EnterBio} />
       </Stack.Navigator>
     </NavigationContainer>
   );
