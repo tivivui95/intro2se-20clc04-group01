@@ -25,11 +25,6 @@ const styles = StyleSheet.create({
         fontFamily: Attributes.QuicksandMedium,
         backgroundColor: Colors.defaultWhite
     },
-    ChangePasswordFrame: {
-        marginTop: 300,
-        marginLeft: 27,
-        marginRight: 27
-    },
     titleNoti: {
         flex: 1,
         fontFamily: Attributes.PoppinsSemiBold,
@@ -41,18 +36,15 @@ const styles = StyleSheet.create({
         margin: 9,
         zIndex: 1
     },
-    NotiRow: {
-        flexDirection: 'row',
-    },
-    TopNotiFrame: {
-        flexDirection: 'row',
-        marginTop: 100,
-        marginLeft:24
-    },
     smallText:{
         marginLeft: 24,
         fontFamily: Attributes.Poppins,
         color: "#8B8B8B"
+    },
+    row:{
+        top:10,
+        flexDirection:'row',
+        alignItems:'center'
     }
 });
 

@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     },
     ChangePasswordFrame: {
         marginTop: 300,
-        marginLeft: 27,
-        marginRight: 27
+        marginLeft: 24,
+        marginRight: 24
     },
     Btn_Pos:{
         marginTop: 150
