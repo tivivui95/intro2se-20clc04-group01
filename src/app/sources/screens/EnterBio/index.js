@@ -41,7 +41,7 @@ const EnterBio = ({ navigation }) => {
                 </Text>
                 <View style={styles.Btn_Pos}>
                 <FullSizeBtn    
-                    bgColor={Colors.lightPink} 
+                    bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='MALE' 
                     // onPress={() => navigation.navigate("MainTabs")} 
@@ -49,7 +49,7 @@ const EnterBio = ({ navigation }) => {
                 </View>
                 <View style={styles.Btn_Pos}>
                 <FullSizeBtn    
-                    bgColor={Colors.lightPink} 
+                    bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='FEMALE' 
                     // onPress={() => navigation.navigate("MainTabs")} 
@@ -57,7 +57,7 @@ const EnterBio = ({ navigation }) => {
                 </View>
                 <View style={styles.Btn_Pos}>
                 <FullSizeBtn    
-                    bgColor={Colors.lightPink} 
+                    bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='NON-BINARY' 
                     // onPress={() => navigation.navigate("MainTabs")} 
