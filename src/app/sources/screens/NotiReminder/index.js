@@ -35,9 +35,10 @@ const NotiReminder = ({ navigation }) => {
         setDate(currentDate);
 
         let tempDate = new Date(currentDate);
-        let fDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
-        let fTime = 'Hour: ' + tempDate.getHours() + ' | Minutes: ' + tempDate.getMinutes();
-        setText(fDate + '\n' + fTime)
+        let fTime = ' at ' + tempDate.getHours() + ':' + tempDate.getMinutes();
+        let fDate = ' on ' + tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
+        
+        setText(fTime + fDate)
 
         console.log(fDate + ' (' + fTime + ') ')
     }
@@ -60,7 +61,10 @@ const NotiReminder = ({ navigation }) => {
                     onValueChange={toggleSwitch}
                     value={isEnabled}/>
             </View>
-            <Text style={styles.smallText}>Reminder starts at 7:00 am every day.</Text>
+            <Text style={styles.smallText}>Reminder starts
+                <Text style={{fontWeight:'bold'}}>{text}</Text>
+            </Text>
+            {/* <Text style={[styles.smallText, {fontWeight:'bold'}]}>{text}</Text> */}
             <View style={styles.row}>
                 <Text style={[styles.smallText, {marginRight:230}]}>Remind everday</Text>
                 <CheckBox
@@ -69,12 +73,23 @@ const NotiReminder = ({ navigation }) => {
                 onValueChange={(value) => setState({...state, remind:value})}
                 />
             </View>
-            <Text style={{fontWeight:'bold', fontSize: 20}}>{text}</Text>
             <View style={{margin:20}}>
-                <Button title="DatePicker" onPress={() => showMode('date')}/>
+                {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
+                <FullSizeBtn    
+                    bgColor={Colors.lightPink} 
+                    txtColor={Colors.vivaMagenta} 
+                    text='Date' 
+                    onPress={() => showMode('date')} 
+                />
             </View>
             <View style={{margin:20}}>
-                <Button title="TimePicker" onPress={() => showMode('time')}/>
+                {/* <Button title="TimePicker" onPress={() => showMode('time')}/> */}
+                <FullSizeBtn    
+                    bgColor={Colors.lightPink} 
+                    txtColor={Colors.vivaMagenta} 
+                    text='Time' 
+                    onPress={() => showMode('time')} 
+                />
             </View>
             {show && (
                 <DateTimePicker
