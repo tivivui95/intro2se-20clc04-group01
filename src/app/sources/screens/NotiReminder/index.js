@@ -31,7 +31,7 @@ const NotiReminder = ({ navigation }) => {
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
-        setShow(Platform.OS==='android');
+        setShow(Platform.OS==='ios');
         setDate(currentDate);
 
         let tempDate = new Date(currentDate);
@@ -78,7 +78,7 @@ const NotiReminder = ({ navigation }) => {
                 <FullSizeBtn    
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
-                    text='Date' 
+                    text='Set date' 
                     onPress={() => showMode('date')} 
                 />
             </View>
@@ -87,7 +87,7 @@ const NotiReminder = ({ navigation }) => {
                 <FullSizeBtn    
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
-                    text='Time' 
+                    text='Set time' 
                     onPress={() => showMode('time')} 
                 />
             </View>
@@ -100,6 +100,14 @@ const NotiReminder = ({ navigation }) => {
                 display='default'
                 onChange={onChange}
             />)}
+            <View style={globalStyles.bottom_button}>
+                <FullSizeBtn    
+                    bgColor={Colors.lightPink} 
+                    txtColor={Colors.vivaMagenta} 
+                    text='SAVE CHANGE' 
+                    onPress={() => navigation.navigate("MainTabs")} 
+                />
+            </View>
         </View>
     )
 }
