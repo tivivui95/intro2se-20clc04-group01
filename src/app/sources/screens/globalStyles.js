@@ -32,6 +32,11 @@ const globalStyles = StyleSheet.create({
     },
     roundPadding: {
         padding: 32
+    },
+    bottom_button: {
+        position: 'absolute',
+        bottom: 24,
+        alignSelf: 'center'
     }
 });
 

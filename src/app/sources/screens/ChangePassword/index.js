@@ -43,14 +43,14 @@ const ChangePassword = ({ navigation }) => {
                         value={cfpassword}
                         onChangeText={changeCfPassword}
                         style={styles.text_input} /> 
-                    <View style={styles.Btn_Pos}>
-                        <FullSizeBtn    
-                                bgColor={Colors.lightPink} 
-                                txtColor={Colors.vivaMagenta} 
-                                text='SAVE CHANGE' 
-                                onPress={() => navigation.navigate("MainTabs")} 
-                        />
-                    </View>
+                </View>
+                <View style={globalStyles.bottom_button}>
+                    <FullSizeBtn    
+                        bgColor={Colors.lightPink} 
+                        txtColor={Colors.vivaMagenta} 
+                        text='SAVE CHANGE' 
+                        onPress={() => navigation.navigate("MainTabs")} 
+                    />
                 </View>
         </View>
     )

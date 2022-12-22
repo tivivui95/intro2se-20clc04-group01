@@ -29,11 +29,7 @@ const styles = StyleSheet.create({
         marginTop: 300,
         marginLeft: 24,
         marginRight: 24
-    },
-    Btn_Pos:{
-        marginTop: 150
     }
-
 });
 
 export default styles;
