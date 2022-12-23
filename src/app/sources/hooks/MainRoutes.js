@@ -12,13 +12,14 @@ import ForgotPassword from '../screens/ForgotPassword';
 import NotiReminder from '../screens/NotiReminder';
 import ViewProfile from '../screens/ViewProfile';
 import EnterBio from '../screens/EnterBio';
+import EnterBioHW from '../screens/EnterBioHW';
 
 const Stack = createNativeStackNavigator();
 
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ChangePassword">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="EnterBioHW">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -27,6 +28,7 @@ function MainRoutes() {
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="NotiReminder" component={NotiReminder} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        <Stack.Screen name="EnterBioHW" component={EnterBioHW} />
         <Stack.Screen name="EnterBio" component={EnterBio} />
       </Stack.Navigator>
     </NavigationContainer>
