@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     smallText:{
         marginLeft: 24,
         fontFamily: Attributes.Poppins,
+        fontSize: 18,
         color: "#8B8B8B"
     },
     row:{

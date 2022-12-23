@@ -3,6 +3,7 @@ import { ImageBackground, View, Text, Image, Pressable, TextInput, Switch, Platf
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import FullSizeBtn from "../../components/FullSizeBtn";
+import SmallSizeBtn from "../../components/SmallSizeBtn";
 
 import globalStyles from "../globalStyles";
 import styles from "./styles";
@@ -27,7 +28,7 @@ const NotiReminder = ({ navigation }) => {
     const[date, setDate] = useState(new Date());
     const[mode, setMode] = useState('date');
     const[show, setShow] = useState(false);
-    const[text, setText] = useState('Empty');
+    const[text, setText] = useState('');
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
@@ -61,22 +62,22 @@ const NotiReminder = ({ navigation }) => {
                     onValueChange={toggleSwitch}
                     value={isEnabled}/>
             </View>
-            <Text style={styles.smallText}>Reminder starts
+            <Text style={[styles.smallText, {marginTop : 150}]}>Reminder starts
                 <Text style={{fontWeight:'bold'}}>{text}</Text>
             </Text>
             {/* <Text style={[styles.smallText, {fontWeight:'bold'}]}>{text}</Text> */}
             <View style={styles.row}>
-                <Text style={[styles.smallText, {marginRight:230}]}>Remind everday</Text>
+                <Text style={[styles.smallText, {marginRight:200}]}>Remind everday</Text>
                 <CheckBox
                 disabled={false}
                 value={state.remind}
                 onValueChange={(value) => setState({...state, remind:value})}
                 />
             </View>
-            <View style={{margin:20}}>
+            <View style={{marginTop: 250, marginBottom: 20}}>
                 {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
-                <FullSizeBtn    
-                    bgColor={Colors.lightPink} 
+                <SmallSizeBtn    
+                    bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='Set date' 
                     onPress={() => showMode('date')} 
@@ -84,8 +85,8 @@ const NotiReminder = ({ navigation }) => {
             </View>
             <View style={{margin:20}}>
                 {/* <Button title="TimePicker" onPress={() => showMode('time')}/> */}
-                <FullSizeBtn    
-                    bgColor={Colors.lightPink} 
+                <SmallSizeBtn    
+                    bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='Set time' 
                     onPress={() => showMode('time')} 
