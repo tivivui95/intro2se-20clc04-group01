@@ -20,7 +20,7 @@ const muscleGroupController = {
     },
     getAGroup: async(req, res) =>{
         try {
-            const group = await MuscleGroup.findOne({group_id: req.params.id}).populate("exercises", "id name video descrip duration");
+            const group = await MuscleGroup.findOne({group_id: req.params.id}).populate("exercises", "id name video descrip duration imagePath");
             res.status(200).json(group);
         } catch (error) {
             res.status(500).json({ success: false, msg: err.message });

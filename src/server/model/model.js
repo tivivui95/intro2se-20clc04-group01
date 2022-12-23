@@ -11,6 +11,9 @@ const seriesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imagePath:[{
+        type: String
+    }],
     descrip:{
         type: String
     },
@@ -31,6 +34,9 @@ const muscleGroupSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imagePath:[{
+        type: String
+    }],
     descrip:{
         type: String
     },
@@ -54,6 +60,9 @@ const exercisesSchema = new mongoose.Schema({
     video: {
         type: String,
     },
+    imagePath:[{
+        type: String
+    }],
     descrip: {
         type: String
     },

@@ -21,7 +21,7 @@ const seriesController = {
     },
     getASeries: async (req, res) =>{
         try {
-            const series = await Series.findOne({series_id: req.params.id}).populate("exercises", "id name video descrip duration");
+            const series = await Series.findOne({series_id: req.params.id}).populate("exercises", "id name video descrip duration imagePath");
             res.status(200).json(series);
         } catch (error) {
             res.status(500).json(error.message)
