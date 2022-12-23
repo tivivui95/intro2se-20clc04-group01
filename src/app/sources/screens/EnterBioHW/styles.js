@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         opacity: 0.82,
         backgroundColor: Colors.lightPink,
         width: '100%',
-        height: '100%'
+        height: '200%'
     },
     text_input: {
         borderColor: Colors.defaultBlack,
@@ -29,12 +29,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginLeft: 24,
         marginRight: 24
-    },
-
-    MaleFemaleButton: {
-        marginTop: 20,
-        marginLeft: 24,
-        marginRight: 24,
     },
 
     Btn_Pos:{
