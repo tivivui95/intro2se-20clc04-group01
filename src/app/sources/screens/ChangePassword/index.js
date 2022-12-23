@@ -17,6 +17,9 @@ const ChangePassword = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
+            <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.navigate("ViewProfile")}>
+                <Image source={require('../../../assets/images/Black_Back.png')}  alt='back' />
+            </Pressable>
             <View style={[styles.ChangePasswordFrame]}>
                     <Text style={globalStyles.blackTitleSmall}>
                             <Icon name="key" size={20} color="#000000"/>
@@ -48,7 +51,7 @@ const ChangePassword = ({ navigation }) => {
                     <FullSizeBtn    
                         bgColor={Colors.lightPink} 
                         txtColor={Colors.vivaMagenta} 
-                        text='SAVE CHANGE' 
+                        text='SAVE YOUR CHANGE' 
                         onPress={() => navigation.navigate("MainTabs")} 
                     />
                 </View>

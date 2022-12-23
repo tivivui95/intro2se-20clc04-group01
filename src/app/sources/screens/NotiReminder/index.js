@@ -51,6 +51,9 @@ const NotiReminder = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
+            <Pressable style={styles.back} onPress={() => navigation.navigate("Home")}>
+                <Image source={require('../../../assets/images/Pink_Back.png')}  alt='back' />
+            </Pressable>
             <View style={[styles.row, {marginTop: 50, marginLeft: 24}]}>
                 <Text style={styles.titleNoti}>
                     Notification and Reminder
@@ -74,7 +77,7 @@ const NotiReminder = ({ navigation }) => {
                 onValueChange={(value) => setState({...state, remind:value})}
                 />
             </View>
-            <View style={{marginTop: 250, marginBottom: 20}}>
+            <View style={{marginTop: 220, marginBottom: 20}}>
                 {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
                 <SmallSizeBtn    
                     bgColor={Colors.defaultWhite} 

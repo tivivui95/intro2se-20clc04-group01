@@ -13,6 +13,7 @@ import NotiReminder from '../screens/NotiReminder';
 import ViewProfile from '../screens/ViewProfile';
 import EnterBio from '../screens/EnterBio';
 import EnterBioHW from '../screens/EnterBioHW';
+import ViewExercises from '../screens/ViewExercises';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ function MainRoutes() {
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="NotiReminder" component={NotiReminder} />
+        <Stack.Screen name="ViewExercises" component={ViewExercises} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="EnterBioHW" component={EnterBioHW} />
         <Stack.Screen name="EnterBio" component={EnterBio} />
