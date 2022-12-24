@@ -20,7 +20,7 @@ const Stack = createNativeStackNavigator();
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="NotiReminder">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />

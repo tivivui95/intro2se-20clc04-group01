@@ -77,23 +77,25 @@ const NotiReminder = ({ navigation }) => {
                 onValueChange={(value) => setState({...state, remind:value})}
                 />
             </View>
-            <View style={{marginTop: 220, marginBottom: 20}}>
-                {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
-                <SmallSizeBtn    
-                    bgColor={Colors.defaultWhite} 
-                    txtColor={Colors.vivaMagenta} 
-                    text='Set date' 
-                    onPress={() => showMode('date')} 
-                />
-            </View>
-            <View style={{margin:20}}>
-                {/* <Button title="TimePicker" onPress={() => showMode('time')}/> */}
-                <SmallSizeBtn    
-                    bgColor={Colors.defaultWhite} 
-                    txtColor={Colors.vivaMagenta} 
-                    text='Set time' 
-                    onPress={() => showMode('time')} 
-                />
+            <View style={[styles.row, {justifyContent: 'space-around', marginTop: 300}]}>
+                <View>
+                    {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
+                    <SmallSizeBtn    
+                        bgColor={Colors.defaultWhite} 
+                        txtColor={Colors.vivaMagenta} 
+                        text='Set date' 
+                        onPress={() => showMode('date')} 
+                    />
+                </View>
+                <View>
+                    {/* <Button title="TimePicker" onPress={() => showMode('time')}/> */}
+                    <SmallSizeBtn    
+                        bgColor={Colors.defaultWhite} 
+                        txtColor={Colors.vivaMagenta} 
+                        text='Set time' 
+                        onPress={() => showMode('time')} 
+                    />
+                </View>
             </View>
             {show && (
                 <DateTimePicker
