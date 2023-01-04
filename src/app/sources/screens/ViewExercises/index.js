@@ -8,6 +8,10 @@ import Connections from "../../../constants/Connections";
 
 import ExerciseImage from "../../components/ExerciseImage";
 
+import FullSizeBtn from "../../components/FullSizeBtn";
+import Colors from "../../../constants/Colors";
+import globalStyles from "../globalStyles";
+
 const ViewExercises = ({ navigation }) => {
 
     const [ data, changeData ] = useState("");
@@ -50,13 +54,17 @@ const ViewExercises = ({ navigation }) => {
                         <ExerciseImage name={item.name} />
                     </View>))}
                 </View>
-                <Pressable style={styles.btn}>
-                    <LinearGradient start={{x: 0.5, y: 0.5}} end={{x: 0.93, y: 0.5}} colors={['#EB0327', '#EB0349']} style={styles.btn_m}>
-                        <Text style={styles.btn_text}>START PROCESS</Text>
-                    </LinearGradient>
-                </Pressable>
+                <View>
+                    <FullSizeBtn    
+                        bgColor={Colors.vivaMagenta} 
+                        txtColor={Colors.defaultWhite} 
+                        text='ENROLL' 
+                        onPress={() => navigation.navigate("MainTabs")} 
+                    />
+                </View>
                 <Text style={styles.title2}>Description: </Text>
                 <Text>{data.descrip}</Text>
+                <Text style={styles.titleRate}>Ratings & Comments</Text>
             </View>
             : ""}
             

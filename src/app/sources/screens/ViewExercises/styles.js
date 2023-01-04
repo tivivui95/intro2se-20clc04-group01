@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     top: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     back: {
         position: 'relative',
@@ -59,6 +59,13 @@ const styles = StyleSheet.create({
     title2: {
         fontFamily: 'Poppins',
         color: '#2694BB',
+        marginTop: 12,
+        fontWeight: '800',
+        fontSize: 16
+    },
+    titleRate: {
+        fontFamily: 'Poppins',
+        color: '#000000',
         marginTop: 12,
         fontWeight: '800',
         fontSize: 16
