@@ -1,3 +1,3 @@
 export default {
-    serverURL: 'https://043c-2a09-bac1-7ae0-10-00-17-180.ap.ngrok.io'
+    serverURL: 'https://5b9c-2001-ee0-156-56c0-d13a-fbea-84ad-896e.ap.ngrok.io'
 }

@@ -51,7 +51,7 @@ const NotiReminder = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
-            <Pressable style={styles.back} onPress={() => navigation.navigate("Home")}>
+            <Pressable style={styles.back} onPress={() => navigation.navigate("EnrolledExercises")}>
                 <Image source={require('../../../assets/images/Pink_Back.png')}  alt='back' />
             </Pressable>
             <View style={[styles.row, {marginTop: 50, marginLeft: 24}]}>

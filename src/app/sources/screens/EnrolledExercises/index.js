@@ -10,10 +10,10 @@ import ExerciseImage from "../../components/ExerciseImage";
 
 import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from "../../../constants/Colors";
+import ViewExercises from "../ViewExercises";
 import globalStyles from "../globalStyles";
 
-const ViewExercises = ({ navigation }) => {
-
+const EnrolledExercises = ({ navigation }) => {
     const [ data, changeData ] = useState("");
 
     const getAPI = async () => {
@@ -31,7 +31,7 @@ const ViewExercises = ({ navigation }) => {
     useEffect(() => {
         getAPI();
       }, []);
-
+      
     return (
         <View style={styles.container}>
             <Pressable style={styles.back} onPress={() => navigation.navigate("Home")}>
@@ -56,15 +56,22 @@ const ViewExercises = ({ navigation }) => {
                 </View>
                 <View>
                     <FullSizeBtn    
-                        bgColor={Colors.vivaMagenta} 
+                        bgColor={Colors.softGreen} 
                         txtColor={Colors.defaultWhite} 
-                        text='ENROLL' 
-                        onPress={() => navigation.navigate("EnrolledExercises")} 
+                        text='START SESSION' 
+                        onPress={() => navigation.navigate("MainTabs")} 
                     />
                 </View>
                 <Text style={styles.title2}>Description: </Text>
                 <Text>{data.descrip}</Text>
-                <Text style={styles.titleRate}>Ratings & Comments</Text>
+                <View style={{marginTop: 80}}>
+                    <FullSizeBtn    
+                        bgColor={Colors.defaultWhite} 
+                        txtColor={Colors.vivaMagenta} 
+                        text='Notification Setting' 
+                        onPress={() => navigation.navigate("NotiReminder")} 
+                    />
+                </View>
             </View>
             : ""}
             
@@ -72,4 +79,4 @@ const ViewExercises = ({ navigation }) => {
     );
 }
 
-export default ViewExercises;
+export default EnrolledExercises;
