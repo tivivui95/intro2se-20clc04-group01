@@ -23,7 +23,7 @@ const Stack = createNativeStackNavigator();
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Search">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ViewExercises">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />

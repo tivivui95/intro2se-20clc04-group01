@@ -69,7 +69,13 @@ const styles = StyleSheet.create({
         marginTop: 12,
         fontWeight: '800',
         fontSize: 16
-    }
+    },
+    loadingcontain: {
+        flex: 1,
+        height: 180,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default styles;

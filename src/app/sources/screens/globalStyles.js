@@ -38,7 +38,11 @@ const globalStyles = StyleSheet.create({
         position: 'absolute',
         bottom: 24,
         alignSelf: 'center'
-    }
+    }, 
+    mini_exercise: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
 });
 
 export default globalStyles;

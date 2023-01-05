@@ -12,25 +12,32 @@ import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from "../../../constants/Colors";
 import globalStyles from "../globalStyles";
 
+import { GetSeries } from "../../functions/APIData";
+import LoadingAnimation from "../../components/LoadingAnimation";
+
 const ViewExercises = ({ navigation }) => {
 
-    const [ data, changeData ] = useState("");
+    const [data, changeData] = useState("");
+    const [count, setCount] = useState(0);
 
-    const getAPI = async () => {
-        try {
-         const response = await fetch(Connections.serverURL + '/series/1');
-         const data_2 = await response.json();
-         console.log(data_2);
-         changeData(data_2);
-       } catch (error) {
-         console.error(error);
-       } finally {
-       }
-     }
+    const waitData = async () => {
+        changeData(await GetSeries(2));
+    }
+
+    onSubmitEdit = () => {
+        alert('HI')
+    }
 
     useEffect(() => {
-        getAPI();
-      }, []);
+        // Run! Like go get some data from an API.
+        waitData();
+        const countTimer = setInterval(() => {
+            setCount((prevCount) => prevCount + 1);
+        }, 5000);
+        return function cleanup() {
+            clearInterval(countTimer);
+        };
+    }, []);
 
     return (
         <View style={styles.container}>
@@ -49,8 +56,8 @@ const ViewExercises = ({ navigation }) => {
                     </View>
                 </View>
                 <Text style={styles.text}>Duration: <Text style={{ fontWeight: 'bold' }}>{data.exercises.length} days</Text></Text>
-                <View style={styles.top}>
-                    {data.exercises.map((item) => (<View key={item._id}>
+                <View style={globalStyles.mini_exercise}>
+                    {data.exercises.map((item) => (<View style={{alignContent:'space-around'}}key={item._id}>
                         <ExerciseImage name={item.name} />
                     </View>))}
                 </View>
@@ -65,8 +72,12 @@ const ViewExercises = ({ navigation }) => {
                 <Text style={styles.title2}>Description: </Text>
                 <Text>{data.descrip}</Text>
                 <Text style={styles.titleRate}>Ratings & Comments</Text>
+
             </View>
-            : ""}
+            : 
+            <View style={styles.loadingcontain}>
+                <LoadingAnimation color={Math.floor(Math.random() * 12)} />
+            </View>}
             
         </View>
     );
