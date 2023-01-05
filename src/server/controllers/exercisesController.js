@@ -54,6 +54,19 @@ const exercisesController = {
             res.status(500).json({ success: false, msg: err.message });
         }
     },
+    searchExercises: async (req, res) =>{
+        try {
+            const exercises = await Exercises.find({name: {$regex: new RegExp(req.params.searchString, 'i')}});
+            if (!(await exercises)){
+                res.status(500).send('No exercises.');
+            }
+            else{
+                res.status(200).json(exercises)
+            }
+        } catch (err) {
+            res.status(500).json({ success: false, msg: err.message });
+        }
+    },
     updateExercises: async(req, res) =>{
         try {
             let msg = "";

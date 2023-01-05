@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         paddingHorizontal: 16,
         fontFamily: Attributes.QuicksandMedium,
-        backgroundColor: Colors.defaultWhite
+        backgroundColor: Colors.defaultWhite,
+        color: Colors.defaultBlack
     },
     search_btn:{
         marginVertical: 24,

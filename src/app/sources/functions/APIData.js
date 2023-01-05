@@ -10,6 +10,17 @@ export async function GetAllEx() {
     } 
 }
 
+export async function SearchEx(searchString){
+    try {
+        const response = await fetch(Connections.serverURL + '/ex/search/'+ searchString);
+        const data = await response.json();
+        console.log(data);
+        return data
+    } catch (error) {
+        return { "status": "err", "error": error }
+    } 
+}
+
 export async function GetAllSeries() {
     try {
         const response = await fetch(Connections.serverURL + '/series/');
