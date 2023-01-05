@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { View } from "react-native-animatable";
-import { TextInput, Pressable, Image } from "react-native";
+import { TextInput, Pressable, Image, TouchableHighlight } from "react-native";
 import Colors from "../../../constants/Colors";
 import globalStyles from "../globalStyles";
 import LoadingAnimation from "../../components/LoadingAnimation";
@@ -17,6 +17,11 @@ const Search = ({ navigation }) => {
     const waitData = async () => {
         changeData(await GetAllEx());
     }
+
+    onSubmitEdit = () => {
+        alert('HI')
+    }
+
     useEffect(() => {
         // Run! Like go get some data from an API.
         waitData();
@@ -30,22 +35,22 @@ const Search = ({ navigation }) => {
     return (
         <View style={[globalStyles.roundPadding, globalStyles.container, styles.container]}>
             <Pressable style={styles.back} onPress={() => navigation.navigate("HomeScreen")} >
-                <Image source={require('../../../assets/images/back_btn.png')} alt='back' />
+                <Image source={require('../../../assets/images/Pink_Back.png')} alt='back' />
             </Pressable>
             <View style={globalStyles.two_col}>
                 <TextInput
                     style={styles.text_input}
                     placeholder={'Search exercise...'}
                     placeholderTextColor='rgba(0,0,0,0.5)'
-                    width = '85%'
-                />
-                <Pressable style={styles.search_btn} onPress={() => navigation.navigate("HomeScreen")} >
-                    <Image source={require('../../../assets/images/back_btn.png')} alt='back' />
-                </Pressable>
+                    onSubmitEditing={this.onSubmitEdit}
+                    width='90%' />
+                <TouchableHighlight style={styles.search_btn} onPress={this.onSubmitEdit}>
+                    <Image source={require('../../../assets/images/search_btn.png')} alt='search' />
+                </TouchableHighlight>
             </View>
             <View style={globalStyles.two_col}>
                 {data[0] ? data.map((item) =>
-                    <ExPanel key={item._id} title={item.name} width='47%' style={styles.ex_today} />
+                    <ExPanel key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
                 ) :
                     <View style={styles.loadingcontain}>
                         <LoadingAnimation color={Math.floor(Math.random() * 12)} />
