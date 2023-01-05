@@ -18,7 +18,8 @@ const globalStyles = StyleSheet.create({
     },
     two_col: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        flexWrap: "wrap",
     },
     blackTitle: {
         fontFamily: Attributes.PoppinsSemiBold,

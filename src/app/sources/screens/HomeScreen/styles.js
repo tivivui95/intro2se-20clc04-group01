@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     text_input: {
         borderRadius: 6,
-        height: 36,
+        height: 44,
         marginVertical: 16,
         paddingHorizontal: 15,
         fontFamily: Attributes.QuicksandMedium,

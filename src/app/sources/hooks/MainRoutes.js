@@ -15,13 +15,15 @@ import EnterBio from '../screens/EnterBio';
 import EnterBioHW from '../screens/EnterBioHW';
 import ViewExercises from '../screens/ViewExercises';
 import EnrolledExercises from '../screens/EnrolledExercises';
+import Search from '../screens/Search';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Search">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -34,6 +36,8 @@ function MainRoutes() {
         <Stack.Screen name="EnterBioHW" component={EnterBioHW} />
         <Stack.Screen name="EnterBio" component={EnterBio} />
         <Stack.Screen name="EnrolledExercises" component={EnrolledExercises} />
+        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
