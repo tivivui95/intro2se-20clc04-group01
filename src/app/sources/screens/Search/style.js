@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.defaultWhite
     },
     search_btn:{
-        marginVertical: 8,
+        marginVertical: 24,
     },
     row:{
         marginVertical: 8,
