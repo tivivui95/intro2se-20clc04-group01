@@ -1,0 +1,13 @@
+Change log from previous Sprint:
+- Project Plan: 
+	+ Update more detail to the plan at 4.2. Project Plan.
+	+ Remove the blue italic words.			
+- Vision Document: Changes at
+	+ Remove the blue italic words.
+	+ Fix the stackholder summary.
+	+ Alternatives and competition.
+	+ Product perspective.
+	+ Product features.
+	+ Non-functional requirements.
+- Use Case Specification:
+	+ Add use case and use case specification.
