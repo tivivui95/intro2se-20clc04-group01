@@ -20,6 +20,7 @@ app.use('/series', seriesRoute);
 app.use('/mg', muscleGroupRoute);
 app.use('/auth', authRoute);
 app.use('/user', userRoute);
+app.use('/img', express.static("images"));
 
 
 //connect DB
