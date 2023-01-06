@@ -25,8 +25,9 @@ export default ExPanel = ({ onPress, title, image, style, width }) => {
 const styles = StyleSheet.create({
     text: {
         fontFamily: Attributes.PoppinsSemiBold,
-        fontSize: Attributes.regularFont,
-        color: Colors.defaultWhite
+        fontSize: Attributes.smallFont,
+        color: Colors.defaultWhite,
+        textAlign:'center'
     },
     overlay: {
         position: 'absolute',

@@ -57,7 +57,7 @@ const EnrolledExercises = ({ navigation }) => {
                 </View>
                 <Text style={styles.text}>Duration: <Text style={{ fontWeight: 'bold' }}>{data.exercises.length} days</Text></Text>
                 <View style={globalStyles.mini_exercise}>
-                    {data.exercises.map((item) => (<View style={{alignContent:'space-around'}}key={item._id}>
+                    {data.exercises.map((item) => (<View key={item._id}>
                         <ExerciseImage name={item.name} />
                     </View>))}
                 </View>

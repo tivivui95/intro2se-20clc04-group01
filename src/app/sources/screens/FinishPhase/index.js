@@ -10,18 +10,18 @@ import ExerciseImage from "../../components/ExerciseImage";
 
 import FullSizeBtn from "../../components/FullSizeBtn";
 import Colors from "../../../constants/Colors";
+import ViewExercises from "../ViewExercises";
 import globalStyles from "../globalStyles";
 
 import { GetSeries } from "../../functions/APIData";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
-const ViewExercises = ({ navigation }) => {
-
+const FinishPhase = ({ navigation }) => {
     const [data, changeData] = useState("");
     const [count, setCount] = useState(0);
 
     const waitData = async () => {
-        changeData(await GetSeries(2));
+        changeData(await GetSeries(1));
     }
 
     onSubmitEdit = () => {
@@ -38,7 +38,7 @@ const ViewExercises = ({ navigation }) => {
             clearInterval(countTimer);
         };
     }, []);
-
+      
     return (
         <View style={styles.container}>
             <Pressable style={styles.back} onPress={() => navigation.navigate("Home")}>
@@ -63,24 +63,29 @@ const ViewExercises = ({ navigation }) => {
                 </View>
                 <View>
                     <FullSizeBtn    
-                        bgColor={Colors.vivaMagenta} 
-                        txtColor={Colors.defaultWhite} 
-                        text='ENROLL' 
-                        onPress={() => navigation.navigate("EnrolledExercises")} 
+                        bgColor={Colors.defaultWhite} 
+                        txtColor={Colors.vivaMagenta} 
+                        text='Ratings and comments' 
+                        onPress={() => navigation.navigate("RatingComment")}
                     />
                 </View>
                 <Text style={styles.title2}>Description: </Text>
                 <Text>{data.descrip}</Text>
-                <Text style={styles.titleRate}>Ratings & Comments</Text>
-
             </View>
             : 
             <View style={styles.loadingcontain}>
                 <LoadingAnimation color={Math.floor(Math.random() * 12)} />
             </View>}
-            
+            <View style={globalStyles.bottom_button}>
+                <FullSizeBtn    
+                    bgColor={Colors.softGreen} 
+                    txtColor={Colors.defaultWhite} 
+                    text='FINISH' 
+                    onPress={() => navigation.navigate("HomeScreen")} 
+                />
+            </View>
         </View>
     );
 }
 
-export default ViewExercises;
+export default FinishPhase;
