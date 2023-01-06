@@ -10,13 +10,13 @@ import Attributes from "../../../constants/Attributes";
 
 const EnterBio = ({ navigation }) => {
     return  (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
         <View style={styles.overlay}></View>
         <View style={[styles.ContainFrame]}>
                 <Text style={globalStyles.blackTitleSmall}>
                     Enter your bio
                 </Text>
-                <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont}}>
+                <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont, marginLeft: 74}}>
                     What's your name
                 </Text>
                 <Text syle={globalStyles.blackTitleSmall}>
@@ -36,7 +36,7 @@ const EnterBio = ({ navigation }) => {
             </View>
         </View>
         <View style={[styles.MaleFemaleButton]}>
-                <Text style={{fontFamily:Attributes.PoppinsBold, color:Colors.vivaMagenta,fontSize:Attributes.largeFont}}>
+                <Text style={{fontFamily:Attributes.PoppinsBold, color:Colors.vivaMagenta,fontSize:Attributes.largeFont, marginLeft: 70}}>
                     What's your gender
                 </Text>
                 <View style={styles.Btn_Pos}>
@@ -44,7 +44,6 @@ const EnterBio = ({ navigation }) => {
                     bgColor={Colors.defaultWhite} 
                     txtColor={Colors.vivaMagenta} 
                     text='MALE' 
-                    // onPress={() => navigation.navigate("MainTabs")} 
                     />
                 </View>
                 <View style={styles.Btn_Pos}>
@@ -63,14 +62,14 @@ const EnterBio = ({ navigation }) => {
                     // onPress={() => navigation.navigate("MainTabs")} 
                     />  
                 </View>
-                <View style={styles.Next_Pos}>
+        </View>
+        <View style={globalStyles.bottom_button}>
                 <FullSizeBtn    
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
                     text='NEXT' 
                     onPress={() => navigation.navigate("EnterBioHW")} 
                     />  
-                </View>
         </View>
     </View>
     
