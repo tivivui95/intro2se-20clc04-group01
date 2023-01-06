@@ -9,6 +9,7 @@ import styles from "./styles";
 
 import Colors from '../../../constants/Colors';
 import LogoImage from '../../components/Logo';
+import { UserState } from "realm";
 
 const ChangePassword = ({ navigation }) => {
     const [ currentpassword, changeCurrentPassword ] = useState("");
@@ -52,7 +53,7 @@ const ChangePassword = ({ navigation }) => {
                         bgColor={Colors.lightPink} 
                         txtColor={Colors.vivaMagenta} 
                         text='SAVE YOUR CHANGE' 
-                        onPress={() => navigation.navigate("MainTabs")} 
+                        onPress={() => navigation.navigate("ViewProfile")} 
                     />
                 </View>
         </View>

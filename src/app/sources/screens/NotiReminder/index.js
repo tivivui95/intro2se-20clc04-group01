@@ -111,7 +111,7 @@ const NotiReminder = ({ navigation }) => {
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
                     text='SAVE CHANGE' 
-                    onPress={() => navigation.navigate("MainTabs")} 
+                    onPress={() => navigation.navigate("EnrolledExercises")} 
                 />
             </View>
         </View>
