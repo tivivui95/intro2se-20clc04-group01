@@ -23,26 +23,17 @@ const CurSchema = {
 export function saveCurSession(
     user_email
 ) {
-    const getData = getUserInfo(user_email);
-    if (getData == []) {
-        return 0;
-    } else {
-        const curRealm = new Realm({ 
-            path: 'CurrentDatabase.realm', 
-            schema: [CurSchema] 
-        });
+    const curRealm = new Realm({ 
+        path: 'CurrentDatabase.realm', 
+        schema: [CurSchema] 
+    });
 
-        curRealm.write(() => {
-            const obj = curRealm.objects('cur_user');
-            if (!obj[0]) 
-            curRealm.create('cur_user', {
-                user_email: user_email
-                });
-            else obj[0].user_email = user_email
-        });
-        curRealm.close();
-        return 1;
-    }
+    curRealm.write(() => {
+        curRealm.create('cur_user', {
+            user_email: user_email
+            });
+    });
+    curRealm.close();
 }
 
 export function getCurSession() {
@@ -51,7 +42,7 @@ export function getCurSession() {
         schema: [CurSchema] 
     });
     const data = curRealm.objects('cur_user');
-    if (data[0].user_email)
+    if (data[0])
     return data[0].user_email;
     return data;
 }
@@ -110,10 +101,15 @@ export function modifyUserInfo(
 
 export function getUserInfo(user_email="van23112002@gmail.com") {
     const realm = new Realm({ path: 'UserDatabase.realm' }); 
-    const data = realm.objects('user_details');
-    const finder = data.filtered("user_email = $0", user_email);
-    if (finder[0]) return finder[0];
-    return finder;
+    try {
+        const data = realm.objects('user_details');
+        const finder = data.filtered("user_email = $0", user_email);
+        if (finder[0]) return finder[0];
+    } catch (error) {
+        console.log(error);
+    }
+    
+    return "";
 }
 
 export function deleteCur() {

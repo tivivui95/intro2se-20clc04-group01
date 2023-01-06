@@ -22,7 +22,7 @@ const Login = ({ navigation }) => {
         if (response.email) {
             saveCurSession(response.email);
             const data = getUserInfo(response.email);
-            if (data.user_email) navigation.navigate("MainTabs");
+            if (data != "") navigation.navigate("MainTabs");
             else navigation.navigate("EnterBio");
         } else {
             alert(response);

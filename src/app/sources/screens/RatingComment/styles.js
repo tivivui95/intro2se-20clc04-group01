@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     },
     ContainFrame: {
         marginTop: 20,
-        marginLeft: 24,
-        marginRight: 24
+        margin: 14,
+        flex: 1,
     },
 
     Btn_Pos:{
