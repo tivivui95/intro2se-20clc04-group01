@@ -1,0 +1,10 @@
+Change log from previous Sprint:
+- Software Architecture Document:
+	+ Add		+ Introduction.
+			+ Architectutal Goals and Constraints
+			+ Use-Case Model
+			+ Logical Vỉew
+	+ Draw the class diagram
+
+- Use case Specification Document:
+	+ Since we do not have any feedbacks from TA, we do not any have changes in this PA.
