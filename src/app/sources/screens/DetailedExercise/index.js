@@ -39,8 +39,10 @@ const DetailedExercise = ({ navigation }) => {
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
             {data ?
-            <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.navigate("EnrolledExercises")}>
-                <Image source={require('../../../assets/images/back_btn.png')}  alt='back' />
+            <View>
+                <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.navigate("EnrolledExercises")}>
+                    <Image source={require('../../../assets/images/back_btn.png')}  alt='back' />
+                </Pressable>
                 <Text style={styles.nameSe}>{data.name}</Text>
                 <Text style={styles.nameEx}>Futter Kick</Text>
                 <Text style={styles.title}> How to do this </Text>
@@ -49,8 +51,7 @@ const DetailedExercise = ({ navigation }) => {
                 </View>
                 <Text style={[styles.title, {marginTop: 20}]}> Detail video for demo </Text>
                 <View style={styles.video_wrapper}></View>
-                
-            </Pressable>
+            </View>
             :
             <View style={styles.loadingcontain}>
                 <LoadingAnimation color={Math.floor(Math.random() * 12)} />
