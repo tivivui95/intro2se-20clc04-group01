@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ImageBackground, View, Text, Image, Pressable, TextInput, TouchableOpacity, Slider } from "react-native";
-// import {Slider} from "react-native-community"
 import FullSizeBtn from "../../components/FullSizeBtn";
 
 import globalStyles from "../globalStyles";
@@ -11,17 +10,18 @@ import Attributes from "../../../constants/Attributes";
 
 const EnterBioHW = ({navigation}) => {
     return  (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
         <View style={styles.overlay}></View>
-        <Text style={globalStyles.blackTitleSmall}>
+            <Pressable style={styles.back} onPress={() => navigation.navigate("EnterBio")}>
+                <Image source={require('../../../assets/images/Pink_Back.png')}  alt='back' />
+            </Pressable>
+            <View style={[styles.ContainFrame]}>
+                <Text style={globalStyles.blackTitleSmall}>
                     Enter your bio
-        </Text>
-        <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont}}>
-            What's your height?
-        </Text>
-        {/* <Slider></Slider> */}
-
-
+                </Text>
+                <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont, marginLeft: 70}}>
+                    What's your height?
+                </Text>
         <View style={[styles.Line_Pos]}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <View style={{flex: 1, height: 1, backgroundColor: 'black'}} /> 
@@ -29,18 +29,20 @@ const EnterBioHW = ({navigation}) => {
             </View>
         </View>
 
-        <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont}}>
+        <Text style={{fontFamily: Attributes.PoppinsBold, color: Colors.vivaMagenta, fontSize: Attributes.largeFont, marginLeft: 70, marginTop:20}}>
             What's your weight?
         </Text>
+        </View>
 
-        <View style= {styles.Next_Pos}>
+        <View style= {globalStyles.bottom_button}>
             <FullSizeBtn
-                bgColor={Colors.softGreen}
-                txtColor={Colors.defaultWhite}
-                text='SAVE YOUR CHANGES'
-                onPress={() => navigation.navigate("MainTabs")} />
+        bgColor={Colors.softGreen}
+        txtColor={Colors.defaultWhite}
+        text='SAVE YOUR CHANGES'
+        onPress={() => navigation.navigate("MainTabs")} />
         </View>
     </View>
+    
     
             );
 

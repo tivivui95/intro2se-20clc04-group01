@@ -18,14 +18,13 @@ import EnrolledExercises from '../screens/EnrolledExercises';
 import Search from '../screens/Search';
 import HomeScreen from '../screens/HomeScreen';
 import DetailedExercise from '../screens/DetailedExercise';
-import FinishPhase from '../screens/FinishPhase';
 
 const Stack = createNativeStackNavigator();
 
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="EnrolledExercises">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -41,7 +40,6 @@ function MainRoutes() {
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailedExercise" component={DetailedExercise} />
-        <Stack.Screen name="FinishPhase" component={FinishPhase} />
       </Stack.Navigator>
     </NavigationContainer>
   );
