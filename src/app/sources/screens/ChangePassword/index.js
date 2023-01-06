@@ -9,6 +9,7 @@ import styles from "./styles";
 
 import Colors from '../../../constants/Colors';
 import LogoImage from '../../components/Logo';
+import { UserState } from "realm";
 
 const ChangePassword = ({ navigation }) => {
     const [ currentpassword, changeCurrentPassword ] = useState("");
