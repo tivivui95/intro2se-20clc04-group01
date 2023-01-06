@@ -17,6 +17,7 @@ import ViewExercises from '../screens/ViewExercises';
 import EnrolledExercises from '../screens/EnrolledExercises';
 import Search from '../screens/Search';
 import HomeScreen from '../screens/HomeScreen';
+import DetailedExercise from '../screens/DetailedExercise';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ function MainRoutes() {
         <Stack.Screen name="EnrolledExercises" component={EnrolledExercises} />
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="DetailedExercise" component={DetailedExercise} />
       </Stack.Navigator>
     </NavigationContainer>
   );
