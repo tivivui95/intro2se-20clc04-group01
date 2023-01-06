@@ -12,7 +12,7 @@ const EnterBioHW = ({navigation}) => {
     return  (
     <View style={globalStyles.container}>
         <View style={styles.overlay}></View>
-            <Pressable style={styles.back} onPress={() => navigation.navigate("EnrolledExercises")}>
+            <Pressable style={styles.back} onPress={() => navigation.navigate("EnterBio")}>
                 <Image source={require('../../../assets/images/Pink_Back.png')}  alt='back' />
             </Pressable>
             <View style={[styles.ContainFrame]}>
