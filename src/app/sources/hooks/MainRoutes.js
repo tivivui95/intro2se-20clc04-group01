@@ -18,13 +18,14 @@ import EnrolledExercises from '../screens/EnrolledExercises';
 import Search from '../screens/Search';
 import HomeScreen from '../screens/HomeScreen';
 import DetailedExercise from '../screens/DetailedExercise';
+import RatingComment from '../screens/RatingComment';
 
 const Stack = createNativeStackNavigator();
 
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="RatingComment">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -40,6 +41,7 @@ function MainRoutes() {
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailedExercise" component={DetailedExercise} />
+        <Stack.Screen name="RatingComment" component={RatingComment}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
