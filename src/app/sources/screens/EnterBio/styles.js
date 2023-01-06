@@ -27,10 +27,12 @@ const styles = StyleSheet.create({
     },
     ContainFrame: {
         marginTop: 20,
-        marginLeft: 24,
-        marginRight: 24
+        flexDirection: 'column',
+        alignItems: 'center'
     },
-
+    left_1: {
+        alignSelf: 'flex-start'
+    },
     MaleFemaleButton: {
         marginTop: 20,
         marginLeft: 24,
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     },
 
     Btn_Pos:{
-        marginTop: 30
+        marginTop: 20
     },
 
     Next_Pos: {

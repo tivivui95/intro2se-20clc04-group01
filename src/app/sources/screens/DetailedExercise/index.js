@@ -10,15 +10,18 @@ import styles from "./styles";
 import Colors from '../../../constants/Colors';
 import LogoImage from '../../components/Logo';
 import { UserState } from "realm";
-import { GetSeries } from "../../functions/APIData";
+import { GetEx, GetSeries } from "../../functions/APIData";
 import LoadingAnimation from "../../components/LoadingAnimation";
+import Attributes from "../../../constants/Attributes";
 
-const DetailedExercise = ({ navigation }) => {
+import { WebView } from 'react-native-webview';
+
+const DetailedExercise = ({ route, navigation }) => {
     const [data, changeData] = useState("");
     const [count, setCount] = useState(0);
-
+    const { ex } = route.params;
     const waitData = async () => {
-        changeData(await GetSeries(1));
+        changeData(await GetEx(ex));
     }
 
     onSubmitEdit = () => {
@@ -40,17 +43,23 @@ const DetailedExercise = ({ navigation }) => {
             <View style={styles.overlay}></View>
             {data ?
             <View>
-                <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.navigate("EnrolledExercises")}>
+                <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.goBack()}>
                     <Image source={require('../../../assets/images/back_btn.png')}  alt='back' />
                 </Pressable>
-                <Text style={styles.nameSe}>{data.name}</Text>
-                <Text style={styles.nameEx}>Futter Kick</Text>
+                <Text style={styles.nameSe}>{data.series.name}</Text>
+                <Text style={styles.nameEx}>{data.name}</Text>
                 <Text style={styles.title}> How to do this </Text>
-                <View style={styles.wrapper}>
-                    <Text> Step 1 </Text>
+                <View style={{margin: 14}}>
+                    <Text style={{ fontFamily: Attributes.QuicksandSemiBold, textAlign: 'justify' }}>{data.descrip}</Text>
                 </View>
                 <Text style={[styles.title, {marginTop: 20}]}> Detail video for demo </Text>
-                <View style={styles.video_wrapper}></View>
+                <View style={styles.video_wrapper}>
+                <WebView
+                 style={{ width: 356, height: 200, borderRadius: 10, alignSelf: 'center' } }
+                 javaScriptEnabled={true}
+                 domStorageEnabled={true}
+                 source={{ uri: 'https://youtube.com/embed/' + data.video }} />
+                </View>
             </View>
             :
             <View style={styles.loadingcontain}>
@@ -61,7 +70,7 @@ const DetailedExercise = ({ navigation }) => {
                     bgColor={Colors.softGreen} 
                     txtColor={Colors.defaultWhite} 
                     text='MARK AS DONE' 
-                    onPress={() => navigation.navigate("NotiReminder")} 
+                    onPress={() => navigation.goBack()} 
                 />
             </View>
         </View>

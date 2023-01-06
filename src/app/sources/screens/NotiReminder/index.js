@@ -51,10 +51,10 @@ const NotiReminder = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
-            <Pressable style={styles.back} onPress={() => navigation.navigate("EnrolledExercises")}>
+            <Pressable style={styles.back} onPress={() => navigation.goBack()}>
                 <Image source={require('../../../assets/images/Pink_Back.png')}  alt='back' />
             </Pressable>
-            <View style={[styles.row, {marginTop: 50, marginLeft: 24}]}>
+            <View style={[styles.row, {marginTop: 24, alignSelf: 'center', margin: 14,}]}>
                 <Text style={styles.titleNoti}>
                     Notification and Reminder
                 </Text> 
@@ -65,19 +65,19 @@ const NotiReminder = ({ navigation }) => {
                     onValueChange={toggleSwitch}
                     value={isEnabled}/>
             </View>
-            <Text style={[styles.smallText, {marginTop : 150}]}>Reminder starts
+            <Text style={[styles.smallText, {marginTop : 100}]}>Reminder starts
                 <Text style={{fontWeight:'bold'}}>{text}</Text>
             </Text>
             {/* <Text style={[styles.smallText, {fontWeight:'bold'}]}>{text}</Text> */}
             <View style={styles.row}>
-                <Text style={[styles.smallText, {marginRight:200}]}>Remind everday</Text>
+                <Text style={[styles.smallText]}>Remind everday</Text>
                 <CheckBox
                 disabled={false}
                 value={state.remind}
                 onValueChange={(value) => setState({...state, remind:value})}
                 />
             </View>
-            <View style={[styles.row, {justifyContent: 'space-around', marginTop: 300}]}>
+            <View style={[styles.row, {justifyContent: 'space-around', marginTop: 40}]}>
                 <View>
                     {/* <Button title="DatePicker" onPress={() => showMode('date')}/> */}
                     <SmallSizeBtn    
@@ -111,7 +111,7 @@ const NotiReminder = ({ navigation }) => {
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
                     text='SAVE CHANGE' 
-                    onPress={() => navigation.navigate("EnrolledExercises")} 
+                    onPress={() => navigation.goBack()} 
                 />
             </View>
         </View>

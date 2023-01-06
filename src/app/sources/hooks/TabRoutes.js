@@ -18,7 +18,7 @@ function MainTabs({ navigation }) {
         tabBarActiveTintColor: Colors.vivaMagenta,
         tabBarStyle: { height: 58 }
     }}
-      initialRouteName="Home"
+      initialRouteName="HomeScreen"
       >
         <Tab.Screen 
             name="Search" 
@@ -31,7 +31,7 @@ function MainTabs({ navigation }) {
             }}
         />
         <Tab.Screen 
-            name="Home" 
+            name="HomeScreen" 
             component={HomeScreen} 
             options={{
                 tabBarShowLabel: false,

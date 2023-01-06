@@ -55,13 +55,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
       },
       video_wrapper: {
-        marginLeft: 10,
-        width: 390,
+        alignSelf: 'center',
+        width: 356,
         height: 200,
-        backgroundColor: '#FFF',
-        borderRadius: 10,
-        borderColor: '#C0C0C0',
-        borderWidth: 1,
+        borderRadius: 10
       },
 });
 

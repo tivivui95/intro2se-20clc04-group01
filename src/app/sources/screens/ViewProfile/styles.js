@@ -1,29 +1,27 @@
 import { StyleSheet } from "react-native";
 
 import Attributes from "../../../constants/Attributes";
+import Colors from "../../../constants/Colors";
 
 const styles = StyleSheet.create({
 
     container: {
         backgroundColor: '#F8E9ED',
-        width: 414,
-        height: 852,
+        alignItems: 'center',
         flex: 1
     },
     userName: 
     {
-        position: 'relative',
-        fontSize: 25,
-        top: 170,
+        fontSize: 26,
         fontFamily: Attributes.PoppinsBold,
         textAlign: 'center',
-        color: '#BB2649'
+        color: '#BB2649',
+        marginTop: 12,
     },
 
     nickname: {
         position: 'relative',
-        fontSize: 15,
-        top: 160,
+        fontSize: 20,
         font: 'Roboto',
         fontWeight: 'bold',
         textAlign: 'center',
@@ -34,29 +32,28 @@ const styles = StyleSheet.create({
     {
         width: 100,
         height: 100,
-        borderRadius: 100/2,
-        marginLeft: 155
+        borderRadius: 50,
+        marginTop: 45
     },
 
     exercise_text: {
         fontSize: 15,
         color: '#BB2649',
-        marginLeft: 15
+        margin: 12,
     },
 
-    name_wrapper: {
-        position: 'relative',
-        width: 360,
+    text_wrapper: {
+        width: 356,
         height: 55,
-        marginTop: 100,
-        marginLeft: 30,
+        marginTop: 12,
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         justifyContent: 'center',
         borderColor: '#C0C0C0',
         borderWidth: 1,
         borderRadius: 10,
-        elevation: 5
+        elevation: 5,
+        paddingHorizontal: 12
     },
 
     gender_wrapper: {
@@ -106,18 +103,27 @@ const styles = StyleSheet.create({
 
     button: {
         alignItems: "center",
-        backgroundColor: "#FCF2F4",
-        padding: 10,
         width: 356,
         height: 55,
-        marginLeft: 30,
-        marginTop: 200
+        backgroundColor: Colors.defaultWhite,
+        borderRadius: 15,
+        justifyContent: 'center',
+        margin: 6,
       },
-
+      button_small: {
+        alignItems: "center",
+        width: 170,
+        height: 55,
+        backgroundColor: Colors.defaultWhite,
+        borderRadius: 15,
+        justifyContent: 'center',
+        margin: 6,
+        padding: 6
+      },
     signout: {
           position: 'relative',
-          fontFamily: Attributes.PoppinsBold,
-          fontSize: Attributes.regularFont,
+          fontFamily: Attributes.PoppinsSemiBold,
+          fontSize: Attributes.smallFont,
           textAlign: 'center',
           color: '#BB2649'
       },
@@ -135,7 +141,7 @@ const styles = StyleSheet.create({
         fontFamily: Attributes.PoppinsBold,
         fontSize: Attributes.regularFont,
         textAlign: 'center',
-        color: '#BB2649'
+        color: Colors.softGreen
     },
 });
 

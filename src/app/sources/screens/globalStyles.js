@@ -11,6 +11,16 @@ const globalStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    back: {
+        position: 'absolute',
+        margin: 12,
+        zIndex: 1
+    },
+    top_flex: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    },
     bottom_flex: {
         flex: 1,
         alignItems: 'center',
@@ -47,7 +57,9 @@ const globalStyles = StyleSheet.create({
     },
     mini_exercise: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
+        alignContent: 'flex-start',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap'
     },
 });
 

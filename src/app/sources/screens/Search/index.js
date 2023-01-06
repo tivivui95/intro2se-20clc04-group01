@@ -74,7 +74,7 @@ const Search = ({ navigation }) => {
     }, []);
     return (
         <View style={[globalStyles.roundPadding, globalStyles.container, styles.container]}>
-            <Pressable style={styles.back} onPress={() => navigation.navigate("HomeScreen")} >
+            <Pressable style={styles.back} onPress={() => navigation.goBack()} >
                 <Image source={require('../../../assets/images/Pink_Back.png')} alt='back' />
             </Pressable>
             <View style={globalStyles.two_col}>
@@ -96,7 +96,7 @@ const Search = ({ navigation }) => {
             </View>
             <ScrollView contentContainerStyle={globalStyles.two_col}>
                 {data[0] ? data.map((item) =>
-                    <ExPanel key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
+                    <ExPanel onPress={() => navigation.navigate("DetailedExercise", {ex: item.id})} key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
                 ) :
                     <View style={styles.loadingcontain}>
                         <LoadingAnimation color={Math.floor(Math.random() * 12)} />

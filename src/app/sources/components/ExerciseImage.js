@@ -1,20 +1,18 @@
 import React from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
 
-const ExerciseImage = ({ image, name }) => {
-    return (<View>
-        <View style={styles.border}>
-        {image ? <Image style={styles.img} source={image} alt='ex' />: <Image style={styles.img} source={require('../../assets/images/logo.png')} />}
+const ExerciseImage = ({ image, name, onPress, style={ width: 100, height: 100}, textStyle={width: 100} }) => {
+    return (<Pressable onPress={onPress}>
+        <View style={[styles.border, style]}>
+        {image ? <Image style={styles.img_cv} source={image} alt='ex' />: <Image style={styles.img} source={require('../../assets/images/logo.png')} />}
         </View>
-        <Text style={styles.text}>{name}</Text>
-    </View>);
+        <Text style={[styles.text, textStyle]}>{name}</Text>
+    </Pressable>);
 }
 const styles = StyleSheet.create({
     border: {
         borderRadius: 15,
         backgroundColor: 'white',
-        width: 100,
-        height: 100,
         alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
@@ -24,9 +22,16 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40
     },
+    img_cv: {
+        resizeMode: 'cover',
+        width: '100%',
+        height: '100%',
+        borderRadius: 15
+    },
     text: {
         padding: 6,
         alignSelf: 'center',
+        textAlign: 'center',
         fontFamily: 'Poppins',
         fontSize: 15,
         fontWeight: '700',

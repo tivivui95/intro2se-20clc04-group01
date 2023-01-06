@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         zIndex: 1
     },
     smallText:{
-        marginLeft: 24,
+        alignSelf: 'flex-start',
+        margin: 14,
         fontFamily: Attributes.Poppins,
         fontSize: 18,
         color: "#8B8B8B"

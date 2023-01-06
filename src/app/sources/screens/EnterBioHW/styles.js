@@ -25,11 +25,6 @@ const styles = StyleSheet.create({
         fontFamily: Attributes.QuicksandMedium,
         backgroundColor: Colors.defaultWhite
     },
-    ContainFrame: {
-        marginTop: 20,
-        marginLeft: 24,
-        marginRight: 24
-    },
 
     Btn_Pos:{
         marginTop: 30

@@ -7,16 +7,19 @@ import styles from "./styles";
 import LoadingAnimation from '../../components/LoadingAnimation';
 import ExPanel from "../../components/ExPanel";
 
-import { getUserInfo, modifyUserInfo, createUserInfo } from "../../functions/realmDB";
+import { getUserInfo, modifyUserInfo, createUserInfo, deleteUserDB, getCurSession } from "../../functions/realmDB";
 import { GetAllSeries } from "../../functions/APIData";
 import Colors from "../../../constants/Colors";
+
 
 const HomeScreen = ({ navigation }) => {
     const [data, changeData] = useState([]);
     const [count, setCount] = useState(0);
-    // createUserInfo('Văn', 'Nguyễn', 'van23112002@gmail.com', 170, 65);
-    const userInfo = getUserInfo();
-
+    // const [catergory, setCatergory] = useState([]);
+    // createUserInfo('Văn', 'Nguyễn', 0, 'van23112002@gmail.com', 170, 65);
+    const userInfo = getUserInfo(getCurSession());
+    // deleteUserDB();
+    // console.log(userInfo);
     const waitData = async () => {
         changeData(await GetAllSeries());
     }
@@ -24,6 +27,7 @@ const HomeScreen = ({ navigation }) => {
         // Run! Like go get some data from an API.
         waitData();
         const countTimer = setInterval(() => {
+            // console.log(typeof(data));
             setCount((prevCount) => prevCount + 1);
         }, 2000);
         return function cleanup() {
@@ -63,7 +67,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={globalStyles.blackTitleSmall}>Category</Text>
             <View style={globalStyles.two_col}>
                 {data[0] ? data.map((item) =>
-                    <ExPanel key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
+                    <ExPanel onPress={() => navigation.navigate("ViewExercises", { series: item.id})} key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
                 ) :
                     <View style={styles.loadingcontain}>
                         <LoadingAnimation color={Math.floor(Math.random() * 12)} />

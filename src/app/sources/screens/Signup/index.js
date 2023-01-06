@@ -14,6 +14,9 @@ const Signup = ({ navigation }) => {
     const [ cfpassword, changeCfPassword ] = useState("");
     return (
         <View style={globalStyles.container}>
+            <Pressable style={[globalStyles.back]} onPress={() => navigation.goBack()} >
+                <Image source={require('../../../assets/images/Pink_Back.png')} alt='back' />
+            </Pressable>
             <ImageBackground 
               source={require('../../../assets/images/bg-2.png')} 
               resizeMode="cover" 

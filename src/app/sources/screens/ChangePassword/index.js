@@ -18,10 +18,10 @@ const ChangePassword = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <View style={styles.overlay}></View>
-            <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.navigate("ViewProfile")}>
+            <Pressable style={[styles.back, {margin:10}]} onPress={() => navigation.goBack()}>
                 <Image source={require('../../../assets/images/Black_Back.png')}  alt='back' />
             </Pressable>
-            <View style={[styles.ChangePasswordFrame]}>
+            <View style={[globalStyles.center_container, globalStyles.bottom_flex]}>
                     <Text style={globalStyles.blackTitleSmall}>
                             <Icon name="key" size={20} color="#000000"/>
                         Change Password
@@ -47,14 +47,14 @@ const ChangePassword = ({ navigation }) => {
                         value={cfpassword}
                         onChangeText={changeCfPassword}
                         style={styles.text_input} /> 
-                </View>
-                <View style={globalStyles.bottom_button}>
+                    <View style={{margin: 6}}></View>
                     <FullSizeBtn    
-                        bgColor={Colors.lightPink} 
-                        txtColor={Colors.vivaMagenta} 
-                        text='SAVE YOUR CHANGE' 
-                        onPress={() => navigation.navigate("ViewProfile")} 
+                    bgColor={Colors.lightPink} 
+                    txtColor={Colors.vivaMagenta} 
+                    text='SAVE YOUR CHANGE' 
+                    onPress={() => navigation.navigate("ViewProfile")} 
                     />
+                    <View style={{margin: 24}}></View>
                 </View>
         </View>
     )
