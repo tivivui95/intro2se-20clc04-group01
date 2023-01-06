@@ -34,7 +34,9 @@ const authController = {
             if (!loginValidPassword) {
                 res.status(404).json("Wrong passsword");
             }
-            res.status(200).json(loginUser);            
+            else {
+                res.status(200).json(loginUser);            
+            }
         } catch (error) {
             res.status(500).json(error);
         }
