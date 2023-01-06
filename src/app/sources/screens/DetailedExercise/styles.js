@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     wrapper: {
         marginLeft: 10,
-        width: 370,
+        width: 390,
         height: 200,
         backgroundColor: '#FFF',
         borderRadius: 10,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
       },
       video_wrapper: {
         marginLeft: 10,
-        width: 370,
+        width: 390,
         height: 200,
         backgroundColor: '#FFF',
         borderRadius: 10,

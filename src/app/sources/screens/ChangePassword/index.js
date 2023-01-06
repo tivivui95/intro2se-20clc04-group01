@@ -53,7 +53,7 @@ const ChangePassword = ({ navigation }) => {
                         bgColor={Colors.lightPink} 
                         txtColor={Colors.vivaMagenta} 
                         text='SAVE YOUR CHANGE' 
-                        onPress={() => navigation.navigate("MainTabs")} 
+                        onPress={() => navigation.navigate("ViewProfile")} 
                     />
                 </View>
         </View>

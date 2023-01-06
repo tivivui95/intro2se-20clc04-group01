@@ -56,6 +56,14 @@ const DetailedExercise = ({ navigation }) => {
             <View style={styles.loadingcontain}>
                 <LoadingAnimation color={Math.floor(Math.random() * 12)} />
             </View>}
+            <View style={globalStyles.bottom_button}>
+                <FullSizeBtn    
+                    bgColor={Colors.softGreen} 
+                    txtColor={Colors.defaultWhite} 
+                    text='MARK AS DONE' 
+                    onPress={() => navigation.navigate("NotiReminder")} 
+                />
+            </View>
         </View>
     )
 }

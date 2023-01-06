@@ -24,7 +24,7 @@ const Stack = createNativeStackNavigator();
 function MainRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="DetailedExercise">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="EnrolledExercises">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />

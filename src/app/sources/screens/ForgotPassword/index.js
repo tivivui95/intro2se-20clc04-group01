@@ -49,7 +49,7 @@ const ForgotPassword = ({ navigation }) => {
                             bgColor={Colors.vivaMagenta} 
                             txtColor={Colors.defaultWhite} 
                             text='SAVE CHANGE' 
-                            onPress={() => navigation.navigate("MainTabs")} 
+                            onPress={() => navigation.navigate("Login")} 
                         />
                 </View>
             </ImageBackground>

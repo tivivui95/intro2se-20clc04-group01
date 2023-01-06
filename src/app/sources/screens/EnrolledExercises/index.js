@@ -71,20 +71,19 @@ const EnrolledExercises = ({ navigation }) => {
                 </View>
                 <Text style={styles.title2}>Description: </Text>
                 <Text>{data.descrip}</Text>
-                <View style={{marginTop: 80}}>
-                    <FullSizeBtn    
-                        bgColor={Colors.defaultWhite} 
-                        txtColor={Colors.vivaMagenta} 
-                        text='Notification Setting' 
-                        onPress={() => navigation.navigate("NotiReminder")} 
-                    />
-                </View>
             </View>
             : 
             <View style={styles.loadingcontain}>
                 <LoadingAnimation color={Math.floor(Math.random() * 12)} />
             </View>}
-            
+            <View style={globalStyles.bottom_button}>
+                <FullSizeBtn    
+                    bgColor={Colors.defaultWhite} 
+                    txtColor={Colors.vivaMagenta} 
+                    text='Notification Setting' 
+                    onPress={() => navigation.navigate("NotiReminder")} 
+                />
+            </View>
         </View>
     );
 }
