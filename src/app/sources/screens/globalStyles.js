@@ -39,6 +39,12 @@ const globalStyles = StyleSheet.create({
         bottom: 24,
         alignSelf: 'center'
     }, 
+
+    above_bottom_button: {
+        position: 'absolute',
+        bottom: 100,
+        alignSelf: 'center'
+    },
     mini_exercise: {
         flexDirection: 'row',
         flexWrap: 'wrap',

@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
 
+    top: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+
     text_input: {
         borderColor: Colors.defaultBlack,
         borderWidth: 1,
