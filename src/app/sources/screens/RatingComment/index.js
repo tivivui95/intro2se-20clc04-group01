@@ -30,7 +30,14 @@ const RatingComment = ({navigation}) => {
                 </Text>
             </View>
             <View style={[styles.ContainFrame]}>
-                <Text style={globalStyles.blackTitleSmall}>Rating: </Text>
+                <View style={{flexDirection:'row'}}> 
+                    <Text style={globalStyles.blackTitleSmall}>Rating: </Text>
+                    <Image source={require('../../../assets/images/Vector.png')}/>
+                    <Image source={require('../../../assets/images/Vector.png')}/>
+                    <Image source={require('../../../assets/images/Vector.png')}/>
+                    <Image source={require('../../../assets/images/Vector.png')}/>
+                    <Image source={require('../../../assets/images/Vector.png')}/>
+                </View>
                 <Text style={globalStyles.blackTitleSmall}>Comment: </Text>
                 <TextInput 
                     placeholder="Write Your Comment Here!"
