@@ -68,7 +68,7 @@ const EnterBio = ({ navigation }) => {
                     bgColor={Colors.lightPink} 
                     txtColor={Colors.vivaMagenta} 
                     text='NEXT' 
-                    onPress={() => navigation.navigate("MainTabs")} 
+                    onPress={() => navigation.navigate("EnterBioHW")} 
                     />  
                 </View>
         </View>

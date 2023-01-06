@@ -63,7 +63,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={globalStyles.blackTitleSmall}>Category</Text>
             <View style={globalStyles.two_col}>
                 {data[0] ? data.map((item) =>
-                    <ExPanel key={item._id} title={item.name} width='47%' style={styles.ex_today} />
+                    <ExPanel key={item._id} title={item.name} image={item.imagePath[0]} width='47%' style={styles.ex_today} />
                 ) :
                     <View style={styles.loadingcontain}>
                         <LoadingAnimation color={Math.floor(Math.random() * 12)} />

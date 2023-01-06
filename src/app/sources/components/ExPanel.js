@@ -4,12 +4,13 @@ import { ImageBackground, TouchableOpacity, StyleSheet } from "react-native";
 import Attributes from "../../constants/Attributes";
 import Colors from "../../constants/Colors";
 import globalStyles from "../screens/globalStyles";
+import Connections from "../../constants/Connections";
 
 export default ExPanel = ({ onPress, title, image, style, width }) => {
     return (
         <TouchableOpacity onPress={onPress} style={{ width: width }}>
             <ImageBackground 
-              source={image ? image: require('../../assets/images/logo-p.png')}
+              source={image ? {uri: Connections.serverURL + image}: require('../../assets/images/logo-p.png')}
               resizeMode='cover'
               style={style}
             >
