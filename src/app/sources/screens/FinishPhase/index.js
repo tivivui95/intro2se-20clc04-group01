@@ -16,12 +16,12 @@ import globalStyles from "../globalStyles";
 import { GetSeries } from "../../functions/APIData";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
-const FinishPhase = ({ navigation }) => {
+const FinishPhase = ({ route, navigation }) => {
     const [data, changeData] = useState("");
     const [count, setCount] = useState(0);
-
+    const { series } = route.params;
     const waitData = async () => {
-        changeData(await GetSeries(1));
+        changeData(await GetSeries(series));
     }
 
     onSubmitEdit = () => {
@@ -58,8 +58,15 @@ const FinishPhase = ({ navigation }) => {
                 <Text style={styles.text}>Duration: <Text style={{ fontWeight: 'bold' }}>{data.exercises.length} days</Text></Text>
                 <View style={globalStyles.mini_exercise}>
                     {data.exercises.map((item) => (<View key={item._id}>
-                        <ExerciseImage name={item.name} />
+                        <ExerciseImage onPress={() => navigation.navigate("DetailedExercise", { ex: item.id })} style={{width: 100, height: 100}} name={item.name} image={{ uri: Connections.serverURL + item.imagePath[0] }} />
                     </View>))}
+                    {data.exercises.length % 3 == 1 ?
+                    (<View>
+                    </View>)  : data.exercises.length % 3 == 2 ? <View style={{width: 100, height: 100}}></View> : ""
+                    }
+                    {data.exercises.length % 3 == 1 ?
+                    (<View style={{width: 100, height: 100}}>
+                    </View>) : ""}
                 </View>
                 <View>
                     <FullSizeBtn    
@@ -81,7 +88,7 @@ const FinishPhase = ({ navigation }) => {
                     bgColor={Colors.softGreen} 
                     txtColor={Colors.defaultWhite} 
                     text='FINISH' 
-                    onPress={() => navigation.navigate("HomeScreen")} 
+                    onPress={() => navigation.navigate("MainTabs")} 
                 />
             </View>
         </View>

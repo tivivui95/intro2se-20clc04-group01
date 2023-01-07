@@ -70,7 +70,7 @@ const DetailedExercise = ({ route, navigation }) => {
                     bgColor={Colors.softGreen} 
                     txtColor={Colors.defaultWhite} 
                     text='MARK AS DONE' 
-                    onPress={() => navigation.navigate("RatingComment")} 
+                    onPress={() => navigation.navigate("FinishPhase", { series: data.series.id})} 
                 />
             </View>
         </View>

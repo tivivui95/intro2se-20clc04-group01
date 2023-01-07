@@ -53,6 +53,7 @@ const Login = ({ navigation }) => {
                     <TextInput 
                         inlineImageLeft='lock'
                         placeholder="Password"
+                        secureTextEntry={true}
                         inlineImagePadding={30}
                         value={password}
                         onChangeText={changePassword}

@@ -30,6 +30,7 @@ const ForgotPassword = ({ navigation }) => {
                         placeholder="Email"
                         inlineImageLeft='mail'
                         inlineImagePadding={30}
+                        secureTextEntry={true}
                         value={username}
                         onChangeText={changeUsername}
                         style={styles.text_input} />
@@ -44,6 +45,7 @@ const ForgotPassword = ({ navigation }) => {
                         placeholder="Confirm Password"
                         inlineImageLeft='lock'
                         inlineImagePadding={30}
+                        secureTextEntry={true}
                         value={cfpassword}
                         onChangeText={changeCfPassword}
                         style={styles.text_input} />

@@ -37,6 +37,7 @@ const Signup = ({ navigation }) => {
                         placeholder="Password"
                         inlineImageLeft='lock'
                         inlineImagePadding={30}
+                        secureTextEntry={true}
                         value={password}
                         onChangeText={changePassword}
                         style={styles.text_input} /> 
@@ -44,6 +45,7 @@ const Signup = ({ navigation }) => {
                         placeholder="Confirm Password"
                         inlineImageLeft='lock'
                         inlineImagePadding={30}
+                        secureTextEntry={true}
                         value={cfpassword}
                         onChangeText={changeCfPassword}
                         style={styles.text_input} />

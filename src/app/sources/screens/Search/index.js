@@ -74,7 +74,7 @@ const Search = ({ navigation }) => {
     }, []);
     return (
         <View style={[globalStyles.roundPadding, globalStyles.container, styles.container]}>
-            <Pressable style={styles.back} onPress={() => navigation.goBack()} >
+            <Pressable style={styles.back} onPress={() => navigation.navigate("HomeScreen")} >
                 <Image source={require('../../../assets/images/Pink_Back.png')} alt='back' />
             </Pressable>
             <View style={globalStyles.two_col}>

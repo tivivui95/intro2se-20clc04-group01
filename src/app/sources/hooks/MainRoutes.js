@@ -20,6 +20,7 @@ import HomeScreen from '../screens/HomeScreen';
 import DetailedExercise from '../screens/DetailedExercise';
 import RatingComment from '../screens/RatingComment';
 import OrderPizza from '../test/TestPr';
+import FinishPhase from '../screens/FinishPhase';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,7 @@ function MainRoutes() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailedExercise" component={DetailedExercise} />
         <Stack.Screen name="RatingComment" component={RatingComment}/>
+        <Stack.Screen name="FinishPhase" component={FinishPhase}/>
         <Stack.Screen name="Test" component={OrderPizza}/>
       </Stack.Navigator>
     </NavigationContainer>
